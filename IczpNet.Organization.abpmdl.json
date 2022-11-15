@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "IczpNet.Organization.Domain.Shared": {
+      "path": "src/IczpNet.Organization.Domain.Shared/IczpNet.Organization.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.Domain": {
+      "path": "src/IczpNet.Organization.Domain/IczpNet.Organization.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.Application.Contracts": {
+      "path": "src/IczpNet.Organization.Application.Contracts/IczpNet.Organization.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.Application": {
+      "path": "src/IczpNet.Organization.Application/IczpNet.Organization.Application.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.EntityFrameworkCore": {
+      "path": "src/IczpNet.Organization.EntityFrameworkCore/IczpNet.Organization.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.MongoDB": {
+      "path": "src/IczpNet.Organization.MongoDB/IczpNet.Organization.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.HttpApi": {
+      "path": "src/IczpNet.Organization.HttpApi/IczpNet.Organization.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.HttpApi.Client": {
+      "path": "src/IczpNet.Organization.HttpApi.Client/IczpNet.Organization.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "IczpNet.Organization.TestBase": {
+      "path": "test/IczpNet.Organization.TestBase/IczpNet.Organization.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.Organization.EntityFrameworkCore.Tests": {
+      "path": "test/IczpNet.Organization.EntityFrameworkCore.Tests/IczpNet.Organization.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.Organization.MongoDB.Tests": {
+      "path": "test/IczpNet.Organization.MongoDB.Tests/IczpNet.Organization.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.Organization.Domain.Tests": {
+      "path": "test/IczpNet.Organization.Domain.Tests/IczpNet.Organization.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.Organization.Application.Tests": {
+      "path": "test/IczpNet.Organization.Application.Tests/IczpNet.Organization.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.Organization.HttpApi.Host": {
+      "path": "host/IczpNet.Organization.HttpApi.Host/IczpNet.Organization.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.Organization.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/IczpNet.Organization.HttpApi.Client.ConsoleTestApp/IczpNet.Organization.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "IczpNet.Organization.AuthServer": {
+      "path": "host/IczpNet.Organization.AuthServer/IczpNet.Organization.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "IczpNet.Organization.Host.Shared": {
+      "path": "host/IczpNet.Organization.Host.Shared/IczpNet.Organization.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

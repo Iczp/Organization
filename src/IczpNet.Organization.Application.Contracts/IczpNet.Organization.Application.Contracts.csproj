@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>IczpNet.Organization</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="6.0.1" />
+    <PackageReference Include="Volo.Abp.Authorization" Version="6.0.1" />
+    <ProjectReference Include="..\IczpNet.Organization.Domain.Shared\IczpNet.Organization.Domain.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

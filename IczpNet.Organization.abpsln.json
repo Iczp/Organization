@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "IczpNet.Organization": {
+      "path": "IczpNet.Organization.abpmdl.json"
+    }
+  }
+}

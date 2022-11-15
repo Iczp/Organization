@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -11,6 +11,13 @@
 		<PackageProjectUrl>https://github.com/Iczp/Organization.git</PackageProjectUrl>
 		<Version>0.1.1</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
 		<PackageReference Include="IczpNet.AbpCommons.Application" Version="0.1.1" />

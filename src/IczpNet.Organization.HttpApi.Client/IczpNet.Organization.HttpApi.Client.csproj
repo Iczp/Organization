@@ -23,4 +23,11 @@
     <Content Remove="**\*generate-proxy.json" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="..\..\README.md" Link="README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
 </Project>

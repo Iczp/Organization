@@ -13,6 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\..\README.md" Link="README.md">
+      <PackagePath>\</PackagePath>
+      <Pack>True</Pack>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
 		<PackageReference Include="IczpNet.AbpCommons.MongoDB" Version="0.1.1" />
     <PackageReference Include="Volo.Abp.MongoDB" Version="6.0.1" />
     <ProjectReference Include="..\IczpNet.Organization.Domain\IczpNet.Organization.Domain.csproj" />

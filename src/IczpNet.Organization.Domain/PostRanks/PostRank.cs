@@ -1,6 +1,8 @@
 ﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.PostGrades;
 using IczpNet.Organization.PostTypes;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.PostRanks
@@ -13,7 +15,7 @@ namespace IczpNet.Organization.PostRanks
         [ForeignKey(nameof(PostTypeId))]
         public virtual PostType PostType { get; set; }
 
-        //public virtual IEnumerable<Level> LevelList { get; set; }
+        public virtual IEnumerable<PostGrade> PostGradeList { get; set; }
 
     }
 }

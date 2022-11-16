@@ -4,6 +4,7 @@ using IczpNet.Organization.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace IczpNet.Organization.Migrations
 {
     [DbContext(typeof(OrganizationHttpApiHostMigrationsDbContext))]
-    partial class OrganizationHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221116090122_PostType_Alert_Code_Required")]
+    partial class PostType_Alert_Code_Required
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -445,61 +447,6 @@ namespace IczpNet.Organization.Migrations
                     b.ToTable("Organization_Position", (string)null);
                 });
 
-            modelBuilder.Entity("IczpNet.Organization.PostGradePostLevels.PostGradePostLevel", b =>
-                {
-                    b.Property<Guid>("PostGradeId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("PostLevelId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)")
-                        .HasColumnName("ConcurrencyStamp");
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationTime");
-
-                    b.Property<Guid?>("CreatorId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("CreatorId");
-
-                    b.Property<Guid?>("DeleterId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("DeleterId");
-
-                    b.Property<DateTime?>("DeletionTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("DeletionTime");
-
-                    b.Property<string>("ExtraProperties")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ExtraProperties");
-
-                    b.Property<bool>("IsDeleted")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false)
-                        .HasColumnName("IsDeleted");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("LastModificationTime");
-
-                    b.Property<Guid?>("LastModifierId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("LastModifierId");
-
-                    b.HasKey("PostGradeId", "PostLevelId");
-
-                    b.HasIndex("PostLevelId");
-
-                    b.ToTable("Organization_PostGradePostLevel", (string)null);
-                });
-
             modelBuilder.Entity("IczpNet.Organization.PostGrades.PostGrade", b =>
                 {
                     b.Property<Guid>("Id")
@@ -566,9 +513,6 @@ namespace IczpNet.Organization.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<Guid>("PostRankId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<double>("Sorting")
                         .HasColumnType("float");
 
@@ -581,15 +525,15 @@ namespace IczpNet.Organization.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostRankId");
-
                     b.ToTable("Organization_PostGrade", (string)null);
                 });
 
-            modelBuilder.Entity("IczpNet.Organization.PostLevels.PostLevel", b =>
+            modelBuilder.Entity("IczpNet.Organization.PostRankPostGrades.PostRankPostGrade", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("PostRankId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PostGradeId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Code")
@@ -622,17 +566,11 @@ namespace IczpNet.Organization.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ExtraProperties");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false)
                         .HasColumnName("IsDeleted");
-
-                    b.Property<bool>("IsStatic")
-                        .HasColumnType("bit");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2")
@@ -643,31 +581,14 @@ namespace IczpNet.Organization.Migrations
                         .HasColumnName("LastModifierId");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<string>("Name_Pinyin")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                    b.HasKey("PostRankId", "PostGradeId");
 
-                    b.Property<string>("Name_Py")
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
+                    b.HasIndex("PostGradeId");
 
-                    b.Property<double>("Sorting")
-                        .HasColumnType("float");
-
-                    b.Property<Guid?>("TenantId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("TenantId");
-
-                    b.Property<long>("Value")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Organization_PostLevel", (string)null);
+                    b.ToTable("Organization_PostRankPostGrade", (string)null);
                 });
 
             modelBuilder.Entity("IczpNet.Organization.PostRanks.PostRank", b =>
@@ -884,32 +805,21 @@ namespace IczpNet.Organization.Migrations
                     b.Navigation("Parent");
                 });
 
-            modelBuilder.Entity("IczpNet.Organization.PostGradePostLevels.PostGradePostLevel", b =>
+            modelBuilder.Entity("IczpNet.Organization.PostRankPostGrades.PostRankPostGrade", b =>
                 {
                     b.HasOne("IczpNet.Organization.PostGrades.PostGrade", "PostGrade")
-                        .WithMany("LevelList")
+                        .WithMany("PostRankList")
                         .HasForeignKey("PostGradeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IczpNet.Organization.PostLevels.PostLevel", "PostLevel")
-                        .WithMany("LevelList")
-                        .HasForeignKey("PostLevelId")
+                    b.HasOne("IczpNet.Organization.PostRanks.PostRank", "PostRank")
+                        .WithMany()
+                        .HasForeignKey("PostRankId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("PostGrade");
-
-                    b.Navigation("PostLevel");
-                });
-
-            modelBuilder.Entity("IczpNet.Organization.PostGrades.PostGrade", b =>
-                {
-                    b.HasOne("IczpNet.Organization.PostRanks.PostRank", "PostRank")
-                        .WithMany("PostGradeList")
-                        .HasForeignKey("PostRankId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("PostRank");
                 });
@@ -951,17 +861,7 @@ namespace IczpNet.Organization.Migrations
 
             modelBuilder.Entity("IczpNet.Organization.PostGrades.PostGrade", b =>
                 {
-                    b.Navigation("LevelList");
-                });
-
-            modelBuilder.Entity("IczpNet.Organization.PostLevels.PostLevel", b =>
-                {
-                    b.Navigation("LevelList");
-                });
-
-            modelBuilder.Entity("IczpNet.Organization.PostRanks.PostRank", b =>
-                {
-                    b.Navigation("PostGradeList");
+                    b.Navigation("PostRankList");
                 });
 
             modelBuilder.Entity("IczpNet.Organization.PostTypes.PostType", b =>

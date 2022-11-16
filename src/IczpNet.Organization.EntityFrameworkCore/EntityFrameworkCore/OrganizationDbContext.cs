@@ -1,9 +1,8 @@
 ﻿using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
-using IczpNet.Organization.PostGrades;
 using IczpNet.Organization.Positions;
-using IczpNet.Organization.PostRankPostGrades;
+using IczpNet.Organization.PostGrades;
 using IczpNet.Organization.PostRanks;
 using IczpNet.Organization.PostTypes;
 using Microsoft.EntityFrameworkCore;

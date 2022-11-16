@@ -14,7 +14,6 @@ namespace IczpNet.Organization.Departments
         [ForeignKey(nameof(DepartmentTypeId))]
         public virtual DepartmentType DepartmentType { get; set; }
 
-
         public virtual IEnumerable<Employee> EmployeeList { get; set; }
     }
 }

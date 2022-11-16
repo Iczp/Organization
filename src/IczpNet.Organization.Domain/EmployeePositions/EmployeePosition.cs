@@ -1,4 +1,5 @@
-﻿using IczpNet.Organization.Employees;
+﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.Employees;
 using IczpNet.Organization.Positions;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,7 +7,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace IczpNet.Organization.EmployeePositions
 {
-    public class EmployeePosition : FullAuditedAggregateRoot
+    public class EmployeePosition : BaseEntity
     {
         public virtual Guid EmployeeId { get; set; }
         public virtual Guid PositionId { get; set; }

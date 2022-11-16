@@ -1,12 +1,12 @@
-﻿using IczpNet.Organization.PostGrades;
+﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.PostGrades;
 using IczpNet.Organization.PostLevels;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using Volo.Abp.Domain.Entities.Auditing;
 
 namespace IczpNet.Organization.PostGradePostLevels
 {
-    public class PostGradePostLevel : FullAuditedAggregateRoot
+    public class PostGradePostLevel : BaseEntity
     {
         public virtual Guid PostLevelId { get; set; }
 

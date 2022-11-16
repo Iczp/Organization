@@ -9,9 +9,9 @@ using Volo.Abp.MultiTenancy;
 
 namespace IczpNet.Organization.Bases
 {
-    public abstract class BaseEntity : BaseEntity<Guid>
+    public abstract class BaseEntity : FullAuditedAggregateRoot, IMultiTenant
     {
-
+        public virtual Guid? TenantId { get; set; }
     }
     public abstract class BaseEntity<TKey> : FullAuditedAggregateRoot<TKey>, IMultiTenant, IName, ICode, ISorting, IIsActive, IHasPinyin
     {

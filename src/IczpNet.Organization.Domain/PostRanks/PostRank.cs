@@ -1,5 +1,5 @@
 ﻿using IczpNet.Organization.Bases;
-using IczpNet.Organization.Levels;
+using IczpNet.Organization.Grades;
 using IczpNet.Organization.PostTypes;
 using System;
 using System.Collections.Generic;

@@ -26,4 +26,8 @@
     <ProjectReference Include="..\IczpNet.Organization.Domain.Shared\IczpNet.Organization.Domain.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="新文件夹1\" />
+  </ItemGroup>
+
 </Project>

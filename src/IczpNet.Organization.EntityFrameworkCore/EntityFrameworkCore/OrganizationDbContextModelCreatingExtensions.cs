@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IczpNet.AbpCommons.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 
 namespace IczpNet.Organization.EntityFrameworkCore;
@@ -29,5 +30,8 @@ public static class OrganizationDbContextModelCreatingExtensions
             b.HasIndex(q => q.CreationTime);
         });
         */
+
+        builder.ConfigEntitys<OrganizationDomainModule>(OrganizationDbProperties.DbTablePrefix, OrganizationDbProperties.DbSchema);
+
     }
 }

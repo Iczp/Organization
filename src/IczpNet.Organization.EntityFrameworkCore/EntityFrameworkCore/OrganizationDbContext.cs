@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using IczpNet.Organization.Departments;
+using IczpNet.Organization.DepartmentTypes;
+using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,6 +12,9 @@ public class OrganizationDbContext : AbpDbContext<OrganizationDbContext>, IOrgan
     /* Add DbSet for each Aggregate Root here. Example:
      * public DbSet<Question> Questions { get; set; }
      */
+
+    public virtual DbSet<Department> Department { get; }
+    public virtual DbSet<DepartmentType> DepartmentType { get; }
 
     public OrganizationDbContext(DbContextOptions<OrganizationDbContext> options)
         : base(options)

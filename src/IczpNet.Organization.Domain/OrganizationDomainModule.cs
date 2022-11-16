@@ -1,4 +1,6 @@
-﻿using Volo.Abp.Domain;
+﻿using IczpNet.AbpCommons;
+using IczpNet.AbpTrees;
+using Volo.Abp.Domain;
 using Volo.Abp.Modularity;
 
 namespace IczpNet.Organization;
@@ -7,6 +9,8 @@ namespace IczpNet.Organization;
     typeof(AbpDddDomainModule),
     typeof(OrganizationDomainSharedModule)
 )]
+[DependsOn(typeof(AbpCommonsDomainSharedModule))]
+[DependsOn(typeof(AbpTreesDomainSharedModule))]
 public class OrganizationDomainModule : AbpModule
 {
 

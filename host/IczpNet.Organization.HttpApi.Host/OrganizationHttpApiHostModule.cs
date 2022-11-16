@@ -33,6 +33,8 @@ using Volo.Abp.SettingManagement.EntityFrameworkCore;
 using Volo.Abp.Swashbuckle;
 using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.AspNetCore.Mvc;
+using Volo.Abp.AspNetCore.ExceptionHandling;
 
 namespace IczpNet.Organization;
 
@@ -58,6 +60,19 @@ public class OrganizationHttpApiHostModule : AbpModule
     {
         var hostingEnvironment = context.Services.GetHostingEnvironment();
         var configuration = context.Services.GetConfiguration();
+
+        Configure<AbpExceptionHandlingOptions>(options =>
+        {
+            options.SendExceptionsDetailsToClients = true;
+            options.SendStackTraceToClients = true;
+        });
+
+        Configure<AbpAspNetCoreMvcOptions>(options =>
+        {
+            options
+                .ConventionalControllers
+                .Create(typeof(OrganizationApplicationModule).Assembly);
+        });
 
         Configure<AbpDbContextOptions>(options =>
         {

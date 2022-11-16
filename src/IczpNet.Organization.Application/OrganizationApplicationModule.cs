@@ -2,6 +2,8 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using IczpNet.AbpTrees;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.Organization;
 
@@ -11,6 +13,8 @@ namespace IczpNet.Organization;
     typeof(AbpDddApplicationModule),
     typeof(AbpAutoMapperModule)
     )]
+[DependsOn(typeof(AbpCommonsApplicationModule))]
+[DependsOn(typeof(AbpTreesApplicationModule))]
 public class OrganizationApplicationModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)

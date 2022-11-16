@@ -1,8 +1,9 @@
 ﻿using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
-using IczpNet.Organization.Positions;
 using IczpNet.Organization.PostGrades;
+using IczpNet.Organization.Positions;
+using IczpNet.Organization.PostRankPostGrades;
 using IczpNet.Organization.PostRanks;
 using IczpNet.Organization.PostTypes;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,8 @@ public interface IOrganizationDbContext : IEfCoreDbContext
     DbSet<Position> Position { get; }
 
     DbSet<Employee> Employee { get; }
+
+    DbSet<PostGrade> Grade { get; }
 
     DbSet<PostGrade> PostGrade { get; }
 

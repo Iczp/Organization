@@ -1,5 +1,6 @@
 ﻿using IczpNet.AbpCommons.EntityFrameworkCore;
 using IczpNet.Organization.EmployeePositions;
+using IczpNet.Organization.PostRankPostGrades;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp;
 using Volo.Abp.EntityFrameworkCore.Modeling;
@@ -35,10 +36,14 @@ public static class OrganizationDbContextModelCreatingExtensions
 
         builder.ConfigEntitys<OrganizationDomainModule>(OrganizationDbProperties.DbTablePrefix, OrganizationDbProperties.DbSchema);
 
+        builder.Entity<PostRankPostGrade>(b =>
+        {
+            b.HasKey(x => new { x.PostRankId, x.PostGradeId });
+        });
+
         builder.Entity<EmployeePosition>(b =>
         {
             b.HasKey(x => new { x.EmployeeId, x.PositionId });
         });
-
     }
 }

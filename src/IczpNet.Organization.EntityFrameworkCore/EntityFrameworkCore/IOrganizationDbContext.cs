@@ -1,5 +1,7 @@
 ﻿using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
+using IczpNet.Organization.Employees;
+using IczpNet.Organization.Positions;
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
@@ -14,4 +16,11 @@ public interface IOrganizationDbContext : IEfCoreDbContext
      */
     DbSet<Department> Department { get; }
     DbSet<DepartmentType> DepartmentType { get; }
+
+    DbSet<Position> Position { get; }
+
+    DbSet<Employee> Employee { get; }
+
+
+
 }

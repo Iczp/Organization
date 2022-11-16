@@ -5,7 +5,7 @@ using Volo.Abp.Application.Services;
 
 namespace IczpNet.Organization.Departments
 {
-    public interface IDepartmentAppSevice :
+    public interface IDepartmentAppService :
         ICrudAppService<
             DepartmentDetailDto,
             DepartmentDto,

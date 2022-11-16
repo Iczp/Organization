@@ -1,4 +1,5 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.AbpCommons.DataFilters;
+using IczpNet.AbpTrees;
 using System;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
@@ -8,11 +9,11 @@ namespace IczpNet.Organization.Departments.Dtos;
 /// <summary>
 /// DepartmentGetListInput
 /// </summary>
-public class DepartmentGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput
+public class DepartmentGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
 {
-    /// <summary>
-    /// 
-    /// </summary>
+    [DefaultValue(false)]
+    public virtual Guid? DepartmentTypeId { get; set; }
+
     [DefaultValue(false)]
     public virtual bool IsEnabledParentId { get; set; }
     /// <summary>

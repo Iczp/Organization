@@ -14,9 +14,9 @@ namespace IczpNet.Organization.Departments
         [MaxLength(64)]
         public virtual string Code { get; set; }
 
-        public virtual Guid? DepartmentTypeId { get; protected set; }
+        public virtual Guid? DepartmentTypeId { get; set; }
 
         [ForeignKey(nameof(DepartmentTypeId))]
-        public virtual DepartmentType DepartmentType { get; protected set; }
+        public virtual DepartmentType DepartmentType { get; set; }
     }
 }

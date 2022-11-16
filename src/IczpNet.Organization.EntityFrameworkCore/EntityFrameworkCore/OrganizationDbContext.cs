@@ -3,6 +3,7 @@ using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
 using IczpNet.Organization.Positions;
 using IczpNet.Organization.PostGrades;
+using IczpNet.Organization.PostLevels;
 using IczpNet.Organization.PostRanks;
 using IczpNet.Organization.PostTypes;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +23,7 @@ public class OrganizationDbContext : AbpDbContext<OrganizationDbContext>, IOrgan
     public virtual DbSet<DepartmentType> DepartmentType { get; }
     public virtual DbSet<Position> Position { get; }
     public virtual DbSet<Employee> Employee { get; }
-    public virtual DbSet<PostGrade> Grade { get; }
+    public virtual DbSet<PostLevel> PostLevel { get; }
     public virtual DbSet<PostGrade> PostGrade { get; }
     public virtual DbSet<PostRank> PostRank { get; }
     public virtual DbSet<PostType> PostType { get; }

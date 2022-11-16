@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.PostRanks
 {
-    public class PostRank : BaseEntity
+    public class PostRank : BaseEntity<Guid>
     {
 
         public virtual Guid PostTypeId { get; set; }

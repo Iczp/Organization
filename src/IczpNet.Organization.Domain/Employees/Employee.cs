@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.Employees
 {
-    public class Employee: BaseEntity
+    public class Employee: BaseEntity<Guid>
     {
         public virtual Guid? DepartmentId { get; set; }
 

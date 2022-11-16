@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.PostGrades
 {
-    public class PostGrade : BaseEntity
+    public class PostGrade : BaseEntity<Guid>
     {
         //[Range(0, 20)]
         public virtual long Value { get; set; }

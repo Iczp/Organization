@@ -1,12 +1,13 @@
 ﻿using IczpNet.Organization.Bases;
 using IczpNet.Organization.PostRanks;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace IczpNet.Organization.PostTypes
 {
-    public class PostType : BaseEntity
+    public class PostType : BaseEntity<Guid>
     {
         [MaxLength(64)]
         [Required(ErrorMessage = "[Code]不能为空")]

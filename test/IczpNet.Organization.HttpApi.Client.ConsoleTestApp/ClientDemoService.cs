@@ -11,7 +11,7 @@ namespace IczpNet.Organization;
 
 public class ClientDemoService : ITransientDependency
 {
-    private readonly ISampleAppService _sampleAppService;
+    //private readonly ISampleAppService _sampleAppService;
     private readonly IIdentityModelAuthenticationService _authenticationService;
     private readonly IConfiguration _configuration;
 
@@ -20,7 +20,7 @@ public class ClientDemoService : ITransientDependency
         IIdentityModelAuthenticationService authenticationService,
         IConfiguration configuration)
     {
-        _sampleAppService = sampleAppService;
+        //_sampleAppService = sampleAppService;
         _authenticationService = authenticationService;
         _configuration = configuration;
     }
@@ -41,11 +41,11 @@ public class ClientDemoService : ITransientDependency
         Console.WriteLine();
         Console.WriteLine($"***** {nameof(TestWithDynamicProxiesAsync)} *****");
 
-        var result = await _sampleAppService.GetAsync();
-        Console.WriteLine("Result: " + result.Value);
+        //var result = await _sampleAppService.GetAsync();
+        //Console.WriteLine("Result: " + result.Value);
 
-        result = await _sampleAppService.GetAuthorizedAsync();
-        Console.WriteLine("Result (authorized): " + result.Value);
+        //result = await _sampleAppService.GetAuthorizedAsync();
+        //Console.WriteLine("Result (authorized): " + result.Value);
     }
 
     /* Shows how to use HttpClient to perform a request to the HTTP API.

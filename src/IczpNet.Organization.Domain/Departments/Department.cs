@@ -1,4 +1,7 @@
-﻿using IczpNet.Organization.DepartmentTypes;
+﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.DepartmentFunctionals;
+using IczpNet.Organization.DepartmentPositions;
+using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
 using System;
 using System.Collections.Generic;
@@ -15,5 +18,10 @@ namespace IczpNet.Organization.Departments
         public virtual DepartmentType DepartmentType { get; set; }
 
         public virtual IEnumerable<Employee> EmployeeList { get; set; }
+
+        public virtual IEnumerable<DepartmentFunctional> FunctionalList { get; set; }
+
+        public virtual IEnumerable<DepartmentPosition> PositionlList { get; set; }
+        
     }
 }

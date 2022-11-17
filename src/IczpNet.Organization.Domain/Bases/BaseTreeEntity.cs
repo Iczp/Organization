@@ -6,12 +6,14 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Volo.Abp.MultiTenancy;
 
-namespace IczpNet.Organization.Departments
+namespace IczpNet.Organization.Bases
 {
-    public abstract class BaseTreeEntity<T> : TreeEntity<T>, IMultiTenant, IHasPinyin, IName, ICode//, ISorting
+    public abstract class BaseTreeEntity<T> : TreeEntity<T>, IMultiTenant, IHasPinyin, IName, ICode, IIsActive//, ISorting
         where T : ITreeEntity
     {
         public virtual Guid? TenantId { get; set; }
+
+        public virtual bool IsActive { get; set; }
 
         [MaxLength(64)]
         public virtual string Code { get; set; }

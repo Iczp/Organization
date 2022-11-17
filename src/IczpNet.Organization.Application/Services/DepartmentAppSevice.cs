@@ -28,7 +28,7 @@ namespace IczpNet.Organization.Services
         protected override async Task<IQueryable<Department>> CreateFilteredQueryAsync(DepartmentGetListInput input)
         {
             return (await base.CreateFilteredQueryAsync(input))
-                .WhereIf(input.DepartmentTypeId.HasValue, x => x.DepartmentTypeId == input.DepartmentTypeId)
+                //.WhereIf(input.DepartmentTypeId.HasValue, x => x.DepartmentTypeId == input.DepartmentTypeId)
                 ;
         }
     }

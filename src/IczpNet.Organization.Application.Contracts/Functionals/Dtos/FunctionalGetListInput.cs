@@ -4,12 +4,12 @@ using System;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
 
-namespace IczpNet.Organization.Departments.Dtos;
+namespace IczpNet.Organization.Functionals.Dtos;
 
 /// <summary>
-/// DepartmentGetListInput
+/// FunctionalGetListInput
 /// </summary>
-public class DepartmentGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
+public class FunctionalGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
 {
     [DefaultValue(false)]
     public virtual bool IsEnabledParentId { get; set; }

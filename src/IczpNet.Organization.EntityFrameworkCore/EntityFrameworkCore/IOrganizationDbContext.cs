@@ -1,4 +1,5 @@
-﻿using IczpNet.Organization.Departments;
+﻿using IczpNet.Organization.Companys;
+using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
 using IczpNet.Organization.Functionals;
@@ -19,6 +20,9 @@ public interface IOrganizationDbContext : IEfCoreDbContext
     /* Add DbSet for each Aggregate Root here. Example:
      * DbSet<Question> Questions { get; }
      */
+
+    DbSet<Company> Company { get; }
+
     DbSet<Department> Department { get; }
 
     DbSet<DepartmentType> DepartmentType { get; }

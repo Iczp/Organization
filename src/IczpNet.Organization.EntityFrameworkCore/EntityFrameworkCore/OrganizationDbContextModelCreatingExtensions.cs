@@ -1,17 +1,11 @@
 ﻿using IczpNet.AbpCommons.EntityFrameworkCore;
-using IczpNet.Organization.EmployeePositions;
-using IczpNet.Organization.PostGradePostLevels;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.ComponentModel.DataAnnotations.Schema;
-using System;
-using Volo.Abp;
-using System.Reflection;
-using System.Linq;
-using Volo.Abp.Domain.Entities;
 using IczpNet.Organization.DepartmentFunctionals;
 using IczpNet.Organization.DepartmentPositions;
+using IczpNet.Organization.EmployeePositions;
 using IczpNet.Organization.PositionFunctionals;
+using IczpNet.Organization.PostGradePostLevels;
+using Microsoft.EntityFrameworkCore;
+using Volo.Abp;
 
 namespace IczpNet.Organization.EntityFrameworkCore;
 
@@ -70,26 +64,26 @@ public static class OrganizationDbContextModelCreatingExtensions
         });
     }
 
-    public static void ConfigEntityKeys(this ModelBuilder builder, Type moduleType, Func<Type, string> getTableName, string dbSchema)
-    {
-        //string entityNamespace = moduleType.Namespace;
-        //foreach (Type t2 in from t in moduleType.Assembly.GetExportedTypes()
-        //                    where t.Namespace!.StartsWith(entityNamespace) && !t.IsAbstract && t.GetInterfaces().Any((Type x) => typeof(IEntity).IsAssignableFrom(x))
-        //                    select t)
-        //{
-        //    builder.Entity(t2, delegate (EntityTypeBuilder b)
-        //    {
-        //        TableAttribute customAttribute = t2.GetCustomAttribute<TableAttribute>();
-        //        if (customAttribute != null)
-        //        {
-        //            b.ToTable(customAttribute.Name, customAttribute.Schema);
-        //        }
-        //        else
-        //        {
-        //            b.ToTable(getTableName(t2), dbSchema);
-        //        }
-        //        b.HasKey(x=> (t2.get))
-        //    });
-        //}
-    }
+    //public static void ConfigEntityKeys(this ModelBuilder builder, Type moduleType, Func<Type, string> getTableName, string dbSchema)
+    //{
+    //    string entityNamespace = moduleType.Namespace;
+    //    foreach (Type t2 in from t in moduleType.Assembly.GetExportedTypes()
+    //                        where t.Namespace!.StartsWith(entityNamespace) && !t.IsAbstract && t.GetInterfaces().Any((Type x) => typeof(IEntity).IsAssignableFrom(x))
+    //                        select t)
+    //    {
+    //        builder.Entity(t2, delegate (EntityTypeBuilder b)
+    //        {
+    //            //TableAttribute customAttribute = t2.GetCustomAttribute<TableAttribute>();
+    //            //if (customAttribute != null)
+    //            //{
+    //            //    b.ToTable(customAttribute.Name, customAttribute.Schema);
+    //            //}
+    //            //else
+    //            //{
+    //            //    b.ToTable(getTableName(t2), dbSchema);
+    //            //}
+    //            b.HasKey(x => (t2.get))
+    //        });
+    //    }
+    //}
 }

@@ -2,10 +2,12 @@
 using IczpNet.Organization.Functionals;
 using IczpNet.Organization.Positions;
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.PositionFunctionals
 {
+    [Index]
     public class PositionFunctional : BaseEntity
     {
         public virtual Guid FunctionalId { get; set; }

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-		<PackageReference Include="IczpNet.AbpCommons.Application.Contracts" Version="0.1.1" />
+		<PackageReference Include="IczpNet.AbpCommons.Application.Contracts" Version="0.1.2" />
 		<PackageReference Include="IczpNet.AbpTrees.Application.Contracts" Version="0.1.3" />
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="6.0.1" />
     <PackageReference Include="Volo.Abp.Authorization" Version="6.0.1" />

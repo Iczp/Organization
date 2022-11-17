@@ -2,6 +2,7 @@
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
+using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.Functionals;
 using IczpNet.Organization.Positions;
 using IczpNet.Organization.PostGrades;
@@ -32,6 +33,8 @@ public interface IOrganizationDbContext : IEfCoreDbContext
     DbSet<Functional> Functional { get; }
 
     DbSet<Employee> Employee { get; }
+
+    DbSet<EmployeeState> EmployeeState { get; }
 
     DbSet<PostLevel> PostLevel { get; }
 

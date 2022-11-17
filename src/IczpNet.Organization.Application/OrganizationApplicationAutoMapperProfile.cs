@@ -10,6 +10,10 @@ using IczpNet.Organization.Companys.Dtos;
 using IczpNet.Organization.Companys;
 using IczpNet.Organization.Positions.Dtos;
 using IczpNet.Organization.Positions;
+using IczpNet.Organization.EmployeeStates.Dtos;
+using IczpNet.Organization.EmployeeStates;
+using IczpNet.Organization.Employees.Dtos;
+using IczpNet.Organization.Employees;
 
 namespace IczpNet.Organization;
 
@@ -95,5 +99,18 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         CreateMap<PositionInfo, PositionWithChildsDto>()
             .Ignore(x => x.ChildsCount)
             .Ignore(x => x.Childs);
+
+
+        //Employee
+        CreateMap<Employee, EmployeeDto>();
+        CreateMap<Employee, EmployeeDetailDto>();
+        CreateMap<EmployeeCreateInput, Employee>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<EmployeeUpdateInput, Employee>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //EmployeeState
+        CreateMap<EmployeeState, EmployeeStateDto>();
+        CreateMap<EmployeeState, EmployeeStateDetailDto>();
+        CreateMap<EmployeeStateCreateInput, EmployeeState>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<EmployeeStateUpdateInput, EmployeeState>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
     }
 }

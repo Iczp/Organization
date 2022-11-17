@@ -2,6 +2,7 @@
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
+using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.Functionals;
 using IczpNet.Organization.Positions;
 using IczpNet.Organization.PostGrades;
@@ -27,6 +28,7 @@ public class OrganizationDbContext : AbpDbContext<OrganizationDbContext>, IOrgan
     public virtual DbSet<Position> Position { get; }
     public virtual DbSet<Functional> Functional { get; }
     public virtual DbSet<Employee> Employee { get; }
+    public virtual DbSet<EmployeeState> EmployeeState { get; }
     public virtual DbSet<PostLevel> PostLevel { get; }
     public virtual DbSet<PostGrade> PostGrade { get; }
     public virtual DbSet<PostRank> PostRank { get; }

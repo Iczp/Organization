@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.PositionFunctionals
 {
-    [Index]
+
     public class PositionFunctional : BaseEntity
     {
         public virtual Guid FunctionalId { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IczpNet.Organization.Localization;
 using Volo.Abp.Application.Services;
 
-namespace IczpNet.Organization;
+namespace IczpNet.Organization.Bases;
 
 public abstract class OrganizationAppService : ApplicationService
 {

@@ -17,7 +17,7 @@ namespace IczpNet.Organization.Employees
         [ForeignKey(nameof(DepartmentId))]
         public virtual Department Department { get; set; }
 
-        [ForeignKey(nameof(DepartmentId))]
+        [ForeignKey(nameof(EmployeeStateId))]
         public virtual EmployeeState EmployeeState { get; set; }
 
         public virtual IEnumerable<EmployeePosition> PositionList { get; set; }

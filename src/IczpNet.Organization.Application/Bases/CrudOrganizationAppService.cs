@@ -7,7 +7,7 @@ using Volo.Abp.Application.Services;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 
-namespace IczpNet.Organization;
+namespace IczpNet.Organization.Bases;
 
 public abstract class CrudOrganizationAppService<
     TEntity,
@@ -26,7 +26,7 @@ public abstract class CrudOrganizationAppService<
         TGetListInput,
         TCreateInput,
         TUpdateInput>
-    , 
+    ,
     ICrudOrganizationAppService<
         TGetOutputDto,
         TGetListOutputDto,

@@ -1,4 +1,5 @@
-﻿using IczpNet.Organization.DepartmentTypes;
+﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.DepartmentTypes.Dtos;
 using System;
 using System.Linq;

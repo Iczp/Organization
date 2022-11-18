@@ -1,10 +1,11 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
+using IczpNet.AbpTrees;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.BaseDtos
 {
-    public class BaseGetListInput: PagedAndSortedResultRequestDto, IKeyword
+    public class BaseGetListInput : PagedAndSortedResultRequestDto, IKeyword
     {
         [DefaultValue(null)]
         public virtual bool? IsStatic { get; set; }

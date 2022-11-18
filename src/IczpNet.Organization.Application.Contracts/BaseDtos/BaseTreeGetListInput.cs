@@ -1,11 +1,12 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
+using IczpNet.AbpTrees;
 using System;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.BaseDtos
 {
-    public class BaseTreeGetListInput : PagedAndSortedResultRequestDto, IKeyword
+    public class BaseTreeGetListInput : PagedAndSortedResultRequestDto, IKeyword, ITreeGetListInput
     {
         [DefaultValue(false)]
         public virtual bool IsEnabledParentId { get; set; }

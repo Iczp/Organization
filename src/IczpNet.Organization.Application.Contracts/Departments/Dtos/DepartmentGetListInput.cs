@@ -1,28 +1,13 @@
-﻿using IczpNet.AbpCommons.DataFilters;
-using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseDtos;
 using System;
 using System.ComponentModel;
-using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Departments.Dtos;
 
-public class DepartmentGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
+public class DepartmentGetListInput : BaseTreeGetListInput
 {
-    [DefaultValue(false)]
-    public virtual bool IsEnabledParentId { get; set; }
-    /// <summary>
-    /// 层级
-    /// </summary>
+
     [DefaultValue(null)]
-    public virtual int? Depth { get; set; }
-    /// <summary>
-    /// 上级部门
-    /// </summary>
-    [DefaultValue(null)]
-    public virtual Guid? ParentId { get; set; }
-    /// <summary>
-    /// 关键字(支持拼音)
-    /// </summary>
-    [DefaultValue(null)]
-    public virtual string Keyword { get; set; }
+    public virtual Guid? DepartmentTypeId { get; set; }
+
 }

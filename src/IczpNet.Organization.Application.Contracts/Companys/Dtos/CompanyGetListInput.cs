@@ -1,27 +1,12 @@
-﻿using IczpNet.AbpCommons.DataFilters;
-using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseDtos;
 using System;
 using System.ComponentModel;
-using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Companys.Dtos;
 
 
-public class CompanyGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
+public class CompanyGetListInput : BaseTreeGetListInput
 {
     [DefaultValue(null)]
     public virtual Guid? CompanyTypeId { get; set; }
-
-    [DefaultValue(false)]
-    public virtual bool IsEnabledParentId { get; set; }
-
-    [DefaultValue(null)]
-    public virtual int? Depth { get; set; }
-
-    [DefaultValue(null)]
-    public virtual Guid? ParentId { get; set; }
-
-
-    [DefaultValue(null)]
-    public virtual string Keyword { get; set; }
 }

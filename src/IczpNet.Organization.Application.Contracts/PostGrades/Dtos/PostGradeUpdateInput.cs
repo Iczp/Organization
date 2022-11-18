@@ -1,6 +1,8 @@
-﻿namespace IczpNet.Organization.PostGrades.Dtos;
+﻿using IczpNet.AbpCommons.DataFilters;
 
-public class PostGradeUpdateInput
+namespace IczpNet.Organization.PostGrades.Dtos;
+
+public class PostGradeUpdateInput : IName
 {
     public virtual string Name { get; set; }
     public virtual string Code { get; set; }

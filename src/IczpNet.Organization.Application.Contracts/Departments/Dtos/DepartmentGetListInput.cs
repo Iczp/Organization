@@ -6,9 +6,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Departments.Dtos;
 
-/// <summary>
-/// DepartmentGetListInput
-/// </summary>
 public class DepartmentGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
 {
     [DefaultValue(false)]

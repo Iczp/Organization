@@ -4,9 +4,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Positions.Dtos
 {
-    /// <summary>
-    /// PositionDto
-    /// </summary>
     public class PositionDto : PositionInfo, IEntityDto<Guid>
     {
 

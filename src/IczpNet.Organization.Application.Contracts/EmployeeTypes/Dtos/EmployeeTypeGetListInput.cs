@@ -5,9 +5,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.EmployeeTypes.Dtos;
 
-/// <summary>
-/// DepartmentGetListInput
-/// </summary>
 public class EmployeeTypeGetListInput : PagedAndSortedResultRequestDto, IKeyword
 {
     [DefaultValue(null)]

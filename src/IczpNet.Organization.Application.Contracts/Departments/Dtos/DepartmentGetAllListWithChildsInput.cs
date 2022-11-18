@@ -3,9 +3,6 @@ using System.ComponentModel;
 
 namespace IczpNet.Organization.Departments.Dtos;
 
-/// <summary>
-/// DepartmentGetListInput
-/// </summary>
 public class DepartmentGetAllListWithChildsInput 
 {
 

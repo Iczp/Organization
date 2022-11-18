@@ -1,13 +1,9 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
-using System;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.PositionTypes.Dtos;
 
-/// <summary>
-/// DepartmentGetListInput
-/// </summary>
 public class PositionTypeGetListInput : PagedAndSortedResultRequestDto, IKeyword
 {
     [DefaultValue(null)]

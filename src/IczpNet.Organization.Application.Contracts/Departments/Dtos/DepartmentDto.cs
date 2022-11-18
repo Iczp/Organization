@@ -4,9 +4,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Departments.Dtos
 {
-    /// <summary>
-    /// DepartmentDto
-    /// </summary>
     public class DepartmentDto : DepartmentInfo, IEntityDto<Guid>
     {
 

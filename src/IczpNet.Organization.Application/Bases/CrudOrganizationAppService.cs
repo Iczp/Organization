@@ -1,4 +1,5 @@
 ﻿using IczpNet.AbpCommons;
+using IczpNet.AbpCommons.DataFilters;
 using IczpNet.Organization.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -34,9 +35,11 @@ public abstract class CrudOrganizationAppService<
         TCreateInput,
         TUpdateInput>
 
-    where TEntity : class, IEntity<TKey>
+    where TEntity : BaseEntity<TKey>, IEntity<TKey>
     where TGetOutputDto : IEntityDto<TKey>
     where TGetListOutputDto : IEntityDto<TKey>
+    where TCreateInput : IName
+    where TUpdateInput : IName
 {
     protected CrudOrganizationAppService(IRepository<TEntity, TKey> repository) : base(repository)
     {
@@ -52,12 +55,14 @@ public abstract class CrudOrganizationAppService<
 
     protected override Task SetCreateEntityAsync(TEntity entity, TCreateInput input)
     {
+        entity.SetName(input.Name);
         return Task.CompletedTask;
     }
 
 
     protected override Task SetUpdateEntityAsync(TEntity entity, TUpdateInput input)
     {
+        entity.SetName(input.Name);
         return Task.CompletedTask;
     }
 

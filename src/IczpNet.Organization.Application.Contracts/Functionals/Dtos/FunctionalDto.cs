@@ -3,9 +3,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Functionals.Dtos
 {
-    /// <summary>
-    /// FunctionalDto
-    /// </summary>
     public class FunctionalDto : FunctionalInfo, IEntityDto<Guid>
     {
 

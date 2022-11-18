@@ -3,9 +3,7 @@ using System;
 
 namespace IczpNet.Organization.Companys.Dtos;
 
-/// <summary>
-/// CompanyUpdateInput
-/// </summary>
+
 public class CompanyUpdateInput : ITreeInput
 {
     public virtual Guid? ParentId { get; set; }

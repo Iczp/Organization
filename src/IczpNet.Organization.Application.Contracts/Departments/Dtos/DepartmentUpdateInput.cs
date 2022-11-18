@@ -3,9 +3,6 @@ using System;
 
 namespace IczpNet.Organization.Departments.Dtos;
 
-/// <summary>
-/// DepartmentUpdateInput
-/// </summary>
 public class DepartmentUpdateInput : ITreeInput
 {
 

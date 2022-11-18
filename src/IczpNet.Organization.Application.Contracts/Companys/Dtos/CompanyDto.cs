@@ -1,12 +1,8 @@
-﻿using IczpNet.Organization.Companys;
-using System;
+﻿using System;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Companys.Dtos
 {
-    /// <summary>
-    /// CompanyDto
-    /// </summary>
     public class CompanyDto : CompanyInfo, IEntityDto<Guid>
     {
         public virtual Guid? CompanyTypeId { get; set; }

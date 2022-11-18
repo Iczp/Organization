@@ -4,9 +4,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.CompanyTypes.Dtos;
 
-/// <summary>
-/// CompanyGetListInput
-/// </summary>
 public class CompanyTypeGetListInput : PagedAndSortedResultRequestDto, IKeyword
 {
     public virtual bool? IsStatic { get; set; }

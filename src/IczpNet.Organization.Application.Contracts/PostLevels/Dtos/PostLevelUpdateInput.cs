@@ -1,6 +1,8 @@
-﻿namespace IczpNet.Organization.PostLevels.Dtos;
+﻿using IczpNet.AbpCommons.DataFilters;
 
-public class PostLevelUpdateInput
+namespace IczpNet.Organization.PostLevels.Dtos;
+
+public class PostLevelUpdateInput : IName
 {
     public virtual string Name { get; set; }
     public virtual string Code { get; set; }

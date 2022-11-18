@@ -3,9 +3,6 @@ using System.ComponentModel;
 
 namespace IczpNet.Organization.Positions.Dtos;
 
-/// <summary>
-/// PositionGetListInput
-/// </summary>
 public class PositionGetAllListWithChildsInput 
 {
 

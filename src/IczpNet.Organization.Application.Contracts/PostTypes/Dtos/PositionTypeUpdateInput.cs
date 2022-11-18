@@ -1,6 +1,8 @@
-﻿namespace IczpNet.Organization.PostTypes.Dtos;
+﻿using IczpNet.AbpCommons.DataFilters;
 
-public class PostTypeUpdateInput
+namespace IczpNet.Organization.PostTypes.Dtos;
+
+public class PostTypeUpdateInput : IName
 {
     public virtual string Name { get; set; }
     public virtual string Code { get; set; }

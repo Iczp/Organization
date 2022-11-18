@@ -1,9 +1,8 @@
-﻿namespace IczpNet.Organization.Employees.Dtos;
+﻿using IczpNet.AbpCommons.DataFilters;
 
-/// <summary>
-/// EmployeeCreateInput
-/// </summary>
-public class EmployeeCreateInput : EmployeeUpdateInput
+namespace IczpNet.Organization.Employees.Dtos;
+
+public class EmployeeCreateInput : EmployeeUpdateInput, IName
 {
 
 }

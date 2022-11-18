@@ -6,9 +6,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Positions.Dtos;
 
-/// <summary>
-/// PositionGetListInput
-/// </summary>
 public class PositionGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
 {
     [DefaultValue(false)]

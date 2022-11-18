@@ -1,6 +1,8 @@
-﻿namespace IczpNet.Organization.PostRanks.Dtos;
+﻿using IczpNet.AbpCommons.DataFilters;
 
-public class PostRankUpdateInput
+namespace IczpNet.Organization.PostRanks.Dtos;
+
+public class PostRankUpdateInput : IName
 {
     public virtual string Name { get; set; }
     public virtual string Code { get; set; }

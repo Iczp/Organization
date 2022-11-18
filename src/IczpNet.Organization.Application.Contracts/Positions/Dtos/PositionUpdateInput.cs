@@ -3,9 +3,6 @@ using System;
 
 namespace IczpNet.Organization.Positions.Dtos;
 
-/// <summary>
-/// PositionUpdateInput
-/// </summary>
 public class PositionUpdateInput : ITreeInput
 {
 

@@ -3,9 +3,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.EmployeeTypes.Dtos
 {
-    /// <summary>
-    /// DepartmentDto
-    /// </summary>
     public class EmployeeTypeDto :  IEntityDto<Guid>
     {
         public virtual string Name { get; set; }

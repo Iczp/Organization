@@ -2,9 +2,6 @@
 
 namespace IczpNet.Organization.Positions.Dtos;
 
-/// <summary>
-/// PositionWithParentDto
-/// </summary>
 public class PositionWithParentDto : TreeWithParentInfo<PositionWithParentDto>
 {
     public virtual string Code { get; set; }

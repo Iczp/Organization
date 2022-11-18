@@ -1,9 +1,8 @@
-﻿namespace IczpNet.Organization.EmployeeTypes.Dtos;
+﻿using IczpNet.AbpCommons.DataFilters;
 
-/// <summary>
-/// DepartmentUpdateInput
-/// </summary>
-public class EmployeeTypeUpdateInput
+namespace IczpNet.Organization.EmployeeTypes.Dtos;
+
+public class EmployeeTypeUpdateInput : IName
 {
     public virtual string Name { get; set; }
     public virtual string Code { get; set; }

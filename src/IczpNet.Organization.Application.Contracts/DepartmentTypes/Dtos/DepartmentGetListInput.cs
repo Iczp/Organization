@@ -4,9 +4,6 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.DepartmentTypes.Dtos;
 
-/// <summary>
-/// DepartmentGetListInput
-/// </summary>
 public class DepartmentTypeGetListInput : PagedAndSortedResultRequestDto, IKeyword
 {
     public virtual bool? IsStatic { get; set; }

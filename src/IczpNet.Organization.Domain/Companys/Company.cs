@@ -1,4 +1,5 @@
 ﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.Departments;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace IczpNet.Organization.Companys
 {
     public class Company : BaseTreeEntity<Company>, IMultiTenant
     {
+        public virtual Guid? CompanyTypeId { get; set; }
 
         [MaxLength(40)]
         public virtual string CreditCode { get; set; }
@@ -39,6 +41,10 @@ namespace IczpNet.Organization.Companys
 
         [MaxLength(200)]
         public virtual string Address { get; set; }
+
+        [ForeignKey(nameof(CompanyTypeId))]
+        public virtual CompanyType CompanyType { get; set; }
+
 
         public virtual IEnumerable<Department> DepartmentList{ get; set; }
 }

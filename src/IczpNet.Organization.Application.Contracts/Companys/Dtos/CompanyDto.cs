@@ -9,7 +9,7 @@ namespace IczpNet.Organization.Companys.Dtos
     /// </summary>
     public class CompanyDto : CompanyInfo, IEntityDto<Guid>
     {
-
+        public virtual Guid? CompanyTypeId { get; set; }
         /// <summary>
         /// 排序（越大越前面） DESC
         /// </summary>

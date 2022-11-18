@@ -9,13 +9,15 @@ using Volo.Abp.MultiTenancy;
 
 namespace IczpNet.Organization.Bases
 {
-    public abstract class BaseEntity : FullAuditedAggregateRoot, IMultiTenant, ISorting
+    public abstract class BaseEntity : FullAuditedAggregateRoot, IMultiTenant, ISorting, IIsStatic
     {
         public virtual Guid? TenantId { get; set; }
 
         public virtual double Sorting { get; set; }
+
+        public virtual bool IsStatic { get; set; }
     }
-    public abstract class BaseEntity<TKey> : FullAuditedAggregateRoot<TKey>, IMultiTenant, IName, ICode, ISorting, IIsActive, IHasPinyin
+    public abstract class BaseEntity<TKey> : FullAuditedAggregateRoot<TKey>, IMultiTenant, IName, ICode, ISorting, IIsActive, IHasPinyin, IIsStatic
     {
         public virtual Guid? TenantId { get; set; }
 
@@ -35,6 +37,8 @@ namespace IczpNet.Organization.Bases
         public virtual double Sorting { get; set; }
 
         public virtual bool IsActive { get; set; }
+
+        public virtual bool IsStatic { get; set; }
 
         public virtual void SetName(string name)
         {

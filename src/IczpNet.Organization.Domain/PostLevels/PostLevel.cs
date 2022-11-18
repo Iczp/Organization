@@ -7,7 +7,6 @@ namespace IczpNet.Organization.PostLevels
 {
     public class PostLevel : BaseEntity<Guid>
     {
-        public virtual bool IsStatic { get; set; }
         //[Range(0, 20)]
         public virtual long Value { get; set; }
 

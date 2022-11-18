@@ -4,6 +4,7 @@ using IczpNet.Organization.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace IczpNet.Organization.Migrations
 {
     [DbContext(typeof(OrganizationHttpApiHostMigrationsDbContext))]
-    partial class OrganizationHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221118032537_Entity_GlobalAddProp_IsStatic")]
+    partial class Entity_GlobalAddProp_IsStatic
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

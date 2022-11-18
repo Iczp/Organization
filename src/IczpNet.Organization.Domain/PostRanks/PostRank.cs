@@ -9,7 +9,7 @@ namespace IczpNet.Organization.PostRanks
 {
     public class PostRank : BaseEntity<Guid>
     {
-
+        public virtual bool IsStatic { get; set; }
         public virtual Guid PostTypeId { get; set; }
 
         [ForeignKey(nameof(PostTypeId))]

@@ -1,16 +1,10 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseInfos;
 using System;
 
 namespace IczpNet.Organization.Positions
 {
-    public class PositionInfo : TreeInfo
+    public class PositionInfo : BaseTreeInfo
     {
         public virtual Guid? PositionTypeId { get; set; }
-
-        public virtual string Code { get; set; }
-
-        public virtual bool IsStatic { get; set; }
-
-        public virtual bool IsActive { get; set; }
     }
 }

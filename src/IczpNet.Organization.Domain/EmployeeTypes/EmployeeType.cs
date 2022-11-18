@@ -7,7 +7,6 @@ namespace IczpNet.Organization.EmployeeTypes
 {
     public class EmployeeType : BaseEntity<Guid>
     {
-        public virtual bool IsStatic { get; set; }
         public virtual IEnumerable<Employee> EmployeeList { get; set; }
     }
 }

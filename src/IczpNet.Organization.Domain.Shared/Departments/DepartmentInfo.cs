@@ -1,16 +1,10 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseInfos;
 using System;
 
 namespace IczpNet.Organization.Departments
 {
-    public class DepartmentInfo : TreeInfo
+    public class DepartmentInfo : BaseTreeInfo
     {
         public virtual Guid? DepartmentTypeId { get; set; }
-
-        public virtual string Code { get; set; }
-
-        public virtual bool IsStatic { get; set; }
-
-        public virtual bool IsActive { get; set; }
     }
 }

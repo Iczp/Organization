@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.Employees;
 using System;
 using System.Collections.Generic;

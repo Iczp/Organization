@@ -7,7 +7,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Entities;
 using Volo.Abp.Domain.Repositories;
 
-namespace IczpNet.Organization.Bases;
+namespace IczpNet.Organization.BaseEntitys;
 
 public abstract class CrudOrganizationAppService<
     TEntity,

@@ -1,10 +1,10 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
+using IczpNet.Organization.BaseDtos;
+using System;
 
 namespace IczpNet.Organization.PostRanks.Dtos;
 
-public class PostRankUpdateInput : IName
+public class PostRankUpdateInput : BaseInput, IName
 {
-    public virtual string Name { get; set; }
-    public virtual string Code { get; set; }
-    public virtual bool IsActive { get; set; }
+    public virtual Guid PostTypeId { get; set; }
 }

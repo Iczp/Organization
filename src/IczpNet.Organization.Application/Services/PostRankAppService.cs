@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.PostRanks;
 using IczpNet.Organization.PostRanks.Dtos;
 using System;

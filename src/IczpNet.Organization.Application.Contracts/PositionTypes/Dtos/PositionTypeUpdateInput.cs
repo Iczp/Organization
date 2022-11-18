@@ -1,10 +1,9 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
+using IczpNet.Organization.BaseDtos;
 
 namespace IczpNet.Organization.PositionTypes.Dtos;
 
-public class PositionTypeUpdateInput : IName
+public class PositionTypeUpdateInput : BaseInput, IName
 {
-    public virtual string Name { get; set; }
-    public virtual string Code { get; set; }
-    public virtual bool IsActive { get; set; }
+
 }

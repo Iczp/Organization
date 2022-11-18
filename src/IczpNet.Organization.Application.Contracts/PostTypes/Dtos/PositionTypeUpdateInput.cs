@@ -1,10 +1,9 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
+using IczpNet.Organization.BaseDtos;
 
 namespace IczpNet.Organization.PostTypes.Dtos;
 
-public class PostTypeUpdateInput : IName
+public class PostTypeUpdateInput : BaseInput, IName
 {
-    public virtual string Name { get; set; }
-    public virtual string Code { get; set; }
-    public virtual bool IsActive { get; set; }
+
 }

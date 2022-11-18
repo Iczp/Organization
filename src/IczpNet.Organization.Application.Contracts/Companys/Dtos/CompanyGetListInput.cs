@@ -9,6 +9,9 @@ namespace IczpNet.Organization.Companys.Dtos;
 
 public class CompanyGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
 {
+    [DefaultValue(null)]
+    public virtual Guid? CompanyTypeId { get; set; }
+
     [DefaultValue(false)]
     public virtual bool IsEnabledParentId { get; set; }
 
@@ -17,6 +20,7 @@ public class CompanyGetListInput : PagedAndSortedResultRequestDto, ITreeGetListI
 
     [DefaultValue(null)]
     public virtual Guid? ParentId { get; set; }
+
 
     [DefaultValue(null)]
     public virtual string Keyword { get; set; }

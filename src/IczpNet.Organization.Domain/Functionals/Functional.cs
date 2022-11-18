@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.DepartmentFunctionals;
 using IczpNet.Organization.PositionFunctionals;
 using System.Collections.Generic;

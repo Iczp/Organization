@@ -8,21 +8,25 @@ namespace IczpNet.Organization.Positions.Dtos;
 
 public class PositionGetListInput : PagedAndSortedResultRequestDto, ITreeGetListInput, IKeyword
 {
+
+    [DefaultValue(null)]
+    public virtual Guid? PositionTypeId { get; set; }
+
+    [DefaultValue(null)]
+    public virtual bool? IsStatic { get; set; }
+
+    [DefaultValue(null)]
+    public virtual bool? IsActive { get; set; }
+
     [DefaultValue(false)]
     public virtual bool IsEnabledParentId { get; set; }
-    /// <summary>
-    /// 层级
-    /// </summary>
+
     [DefaultValue(null)]
     public virtual int? Depth { get; set; }
-    /// <summary>
-    /// 上级部门
-    /// </summary>
+
     [DefaultValue(null)]
     public virtual Guid? ParentId { get; set; }
-    /// <summary>
-    /// 关键字(支持拼音)
-    /// </summary>
+
     [DefaultValue(null)]
     public virtual string Keyword { get; set; }
 }

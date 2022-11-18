@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using Volo.Abp.Domain.Entities.Auditing;
 using Volo.Abp.MultiTenancy;
 
-namespace IczpNet.Organization.Bases
+namespace IczpNet.Organization.BaseEntitys
 {
     public abstract class BaseEntity : FullAuditedAggregateRoot, IMultiTenant, ISorting
     {

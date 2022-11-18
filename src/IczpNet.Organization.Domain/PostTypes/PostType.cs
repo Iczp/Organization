@@ -1,5 +1,5 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
-using IczpNet.Organization.Bases;
+using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.PostRanks;
 using Newtonsoft.Json;
 using System;

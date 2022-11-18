@@ -1,13 +1,10 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseDtos;
+using System;
 
 namespace IczpNet.Organization.Companys.Dtos;
 
 
-public class CompanyWithParentDto : TreeWithParentInfo<CompanyWithParentDto>
+public class CompanyWithParentDto : BaseTreeWithParentDto<CompanyWithParentDto>
 {
-    public virtual string Code { get; set; }
-
-    public virtual long Sorting { get; set; }
-
-    public virtual string Description { get; set; }
+    public virtual Guid? DepartmentTypeId { get; set; }
 }

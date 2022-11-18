@@ -1,16 +1,15 @@
 ﻿using IczpNet.AbpTrees;
-using System;
 
-namespace IczpNet.Organization.Departments
+namespace IczpNet.Organization.BaseDtos
 {
-    public class DepartmentInfo : TreeInfo
+    public class BaseTreeWithParentDto<T>: TreeWithParentInfo<T>
     {
-        public virtual Guid? DepartmentTypeId { get; set; }
-
         public virtual string Code { get; set; }
 
         public virtual bool IsStatic { get; set; }
 
         public virtual bool IsActive { get; set; }
+
+        public virtual double Sorting { get; set; }
     }
 }

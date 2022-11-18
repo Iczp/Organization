@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.PostGrades;
 using IczpNet.Organization.PostTypes;
 using System;
@@ -9,7 +9,6 @@ namespace IczpNet.Organization.PostRanks
 {
     public class PostRank : BaseEntity<Guid>
     {
-        public virtual bool IsStatic { get; set; }
         public virtual Guid PostTypeId { get; set; }
 
         [ForeignKey(nameof(PostTypeId))]

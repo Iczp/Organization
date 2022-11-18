@@ -1,20 +1,15 @@
 ﻿using IczpNet.AbpTrees.Dtos;
+using IczpNet.Organization.BaseDtos;
 using System;
+using System.ComponentModel;
 
 namespace IczpNet.Organization.Companys.Dtos;
 
 
-public class CompanyUpdateInput : ITreeInput
+public class CompanyUpdateInput : BaseTreeInputDto
 {
-    public virtual Guid? ParentId { get; set; }
-
+    [DefaultValue(null)]
     public virtual Guid? CompanyTypeId { get; set; }
-
-    public virtual string Name { get; set; }
-
-    public virtual string Code { get; set; }
-
-    public virtual long Sorting { get; set; }
 
     public virtual string Description { get; set; }
 

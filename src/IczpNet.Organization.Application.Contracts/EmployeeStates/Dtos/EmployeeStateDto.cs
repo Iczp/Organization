@@ -1,18 +1,11 @@
-﻿using System;
+﻿using IczpNet.Organization.BaseDtos;
+using System;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.EmployeeStates.Dtos
 {
-    public class EmployeeStateDto :  IEntityDto<Guid>
+    public class EmployeeStateDto : BaseDto
     {
-        public virtual string Name { get; set; }
 
-        public virtual string Code { get; set; }
-
-        public virtual bool IsStatic { get; set; }
-
-        public virtual bool IsActive { get; set; }
-
-        public Guid Id { get; set; }
     }
 }

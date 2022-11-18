@@ -1,9 +1,10 @@
 ﻿using IczpNet.AbpTrees;
+using IczpNet.Organization.BaseDtos;
+using System;
 
 namespace IczpNet.Organization.Positions.Dtos;
 
-public class PositionWithChildsDto : TreeWithChildsInfo<PositionWithChildsDto>
+public class PositionWithChildsDto : BaseTreeWithChildsDto<PositionWithChildsDto>
 {
-    public virtual string Code { get; set; }
-    public virtual int ChildsCount { get; set; }
+    public virtual Guid? DepartmentTypeId { get; set; }
 }

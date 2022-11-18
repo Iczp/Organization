@@ -1,9 +1,9 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseDtos;
+using System;
 
 namespace IczpNet.Organization.Companys.Dtos;
 
-public class CompanyWithChildsDto : TreeWithChildsInfo<CompanyWithChildsDto>
+public class CompanyWithChildsDto : BaseTreeWithChildsDto<CompanyWithChildsDto>
 {
-    public virtual string Code { get; set; }
-    public virtual int ChildsCount { get; set; }
+    public virtual Guid? DepartmentTypeId { get; set; }
 }

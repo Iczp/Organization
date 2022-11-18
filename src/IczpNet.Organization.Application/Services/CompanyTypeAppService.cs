@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.CompanyTypes.Dtos;
 using System;

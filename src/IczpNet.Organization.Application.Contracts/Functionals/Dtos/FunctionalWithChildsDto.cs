@@ -1,10 +1,7 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.BaseDtos;
 
 namespace IczpNet.Organization.Functionals.Dtos;
 
-public class FunctionalWithChildsDto : TreeWithChildsInfo<FunctionalWithChildsDto>
+public class FunctionalWithChildsDto : BaseTreeWithChildsDto<FunctionalWithChildsDto>
 {
-    public virtual string Code { get; set; }
-
-    public virtual int ChildsCount { get; set; }
 }

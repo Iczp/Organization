@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.EmployeeTypes;
 using IczpNet.Organization.EmployeeTypes.Dtos;
 using System;

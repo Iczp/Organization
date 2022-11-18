@@ -1,5 +1,5 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
-using IczpNet.Organization.Bases;
+using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.PostGradePostLevels;
 using IczpNet.Organization.PostRanks;
 using System;
@@ -17,6 +17,7 @@ namespace IczpNet.Organization.PostGrades
 
         //[Range(0, 20)]
         public virtual long Value { get; set; }
+
         public virtual Guid PostRankId { get; set; }
 
         [ForeignKey(nameof(PostRankId))]

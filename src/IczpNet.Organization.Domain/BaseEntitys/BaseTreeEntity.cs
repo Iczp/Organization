@@ -6,7 +6,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using Volo.Abp.MultiTenancy;
 
-namespace IczpNet.Organization.Bases
+namespace IczpNet.Organization.BaseEntitys
 {
     public abstract class BaseTreeEntity<T> : TreeEntity<T>, IMultiTenant, IHasPinyin, IName, ICode, IIsActive//, ISorting
         where T : ITreeEntity

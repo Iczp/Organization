@@ -1,18 +1,11 @@
-﻿using System;
+﻿using IczpNet.Organization.BaseDtos;
+using System;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.PostRanks.Dtos
 {
-    public class PostRankDto :  IEntityDto<Guid>
+    public class PostRankDto : BaseDto
     {
-        public virtual string Name { get; set; }
-
-        public virtual string Code { get; set; }
-
-        public virtual bool IsStatic { get; set; }
-
-        public virtual bool IsActive { get; set; }
-
-        public Guid Id { get; set; }
+        public virtual Guid PostTypeId { get; set; }
     }
 }

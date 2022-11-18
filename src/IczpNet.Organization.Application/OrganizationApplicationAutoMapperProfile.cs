@@ -22,6 +22,12 @@ using IczpNet.Organization.CompanyTypes.Dtos;
 using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.PostTypes.Dtos;
 using IczpNet.Organization.PostTypes;
+using IczpNet.Organization.PostRanks.Dtos;
+using IczpNet.Organization.PostRanks;
+using IczpNet.Organization.PostGrades.Dtos;
+using IczpNet.Organization.PostGrades;
+using IczpNet.Organization.PostLevels.Dtos;
+using IczpNet.Organization.PostLevels;
 
 namespace IczpNet.Organization;
 
@@ -143,6 +149,24 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         CreateMap<PostType, PostTypeDetailDto>();
         CreateMap<PostTypeCreateInput, PostType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
         CreateMap<PostTypeUpdateInput, PostType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //PostRank
+        CreateMap<PostRank, PostRankDto>();
+        CreateMap<PostRank, PostRankDetailDto>();
+        CreateMap<PostRankCreateInput, PostRank>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<PostRankUpdateInput, PostRank>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //PostGrade
+        CreateMap<PostGrade, PostGradeDto>();
+        CreateMap<PostGrade, PostGradeDetailDto>();
+        CreateMap<PostGradeCreateInput, PostGrade>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<PostGradeUpdateInput, PostGrade>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //PostLevel
+        CreateMap<PostLevel, PostLevelDto>();
+        CreateMap<PostLevel, PostLevelDetailDto>();
+        CreateMap<PostLevelCreateInput, PostLevel>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<PostLevelUpdateInput, PostLevel>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
     }
 }

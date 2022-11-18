@@ -4,6 +4,7 @@ using IczpNet.Organization.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace IczpNet.Organization.Migrations
 {
     [DbContext(typeof(OrganizationHttpApiHostMigrationsDbContext))]
-    partial class OrganizationHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221118015704_EmployeePosition_AddProp_IsMaster")]
+    partial class EmployeePosition_AddProp_IsMaster
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -297,9 +299,6 @@ namespace IczpNet.Organization.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
-                    b.Property<Guid?>("CompanyId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasMaxLength(40)
@@ -387,8 +386,6 @@ namespace IczpNet.Organization.Migrations
                         .HasColumnName("TenantId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CompanyId");
 
                     b.HasIndex("DepartmentTypeId");
 
@@ -1592,10 +1589,6 @@ namespace IczpNet.Organization.Migrations
 
             modelBuilder.Entity("IczpNet.Organization.Departments.Department", b =>
                 {
-                    b.HasOne("IczpNet.Organization.Companys.Company", "Company")
-                        .WithMany("DepartmentList")
-                        .HasForeignKey("CompanyId");
-
                     b.HasOne("IczpNet.Organization.DepartmentTypes.DepartmentType", "DepartmentType")
                         .WithMany("DepartmentList")
                         .HasForeignKey("DepartmentTypeId");
@@ -1603,8 +1596,6 @@ namespace IczpNet.Organization.Migrations
                     b.HasOne("IczpNet.Organization.Departments.Department", "Parent")
                         .WithMany("Childs")
                         .HasForeignKey("ParentId");
-
-                    b.Navigation("Company");
 
                     b.Navigation("DepartmentType");
 
@@ -1738,8 +1729,6 @@ namespace IczpNet.Organization.Migrations
             modelBuilder.Entity("IczpNet.Organization.Companys.Company", b =>
                 {
                     b.Navigation("Childs");
-
-                    b.Navigation("DepartmentList");
                 });
 
             modelBuilder.Entity("IczpNet.Organization.Departments.Department", b =>

@@ -1,5 +1,7 @@
 ﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.Departments;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Volo.Abp.MultiTenancy;
@@ -37,5 +39,7 @@ namespace IczpNet.Organization.Companys
 
         [MaxLength(200)]
         public virtual string Address { get; set; }
-    }
+
+        public virtual IEnumerable<Department> DepartmentList{ get; set; }
+}
 }

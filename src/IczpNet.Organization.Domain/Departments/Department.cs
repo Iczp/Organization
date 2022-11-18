@@ -1,4 +1,5 @@
 ﻿using IczpNet.Organization.Bases;
+using IczpNet.Organization.Companys;
 using IczpNet.Organization.DepartmentFunctionals;
 using IczpNet.Organization.DepartmentPositions;
 using IczpNet.Organization.DepartmentTypes;
@@ -12,7 +13,12 @@ namespace IczpNet.Organization.Departments
 {
     public class Department : BaseTreeEntity<Department>, IMultiTenant
     {
+        public virtual Guid? CompanyId { get; set; }
+
         public virtual Guid? DepartmentTypeId { get; set; }
+
+        [ForeignKey(nameof(CompanyId))]
+        public virtual Company Company { get; set; }
 
         [ForeignKey(nameof(DepartmentTypeId))]
         public virtual DepartmentType DepartmentType { get; set; }

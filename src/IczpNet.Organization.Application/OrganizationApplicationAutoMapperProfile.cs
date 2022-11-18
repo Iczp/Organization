@@ -14,6 +14,10 @@ using IczpNet.Organization.EmployeeStates.Dtos;
 using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.Employees.Dtos;
 using IczpNet.Organization.Employees;
+using IczpNet.Organization.EmployeeTypes.Dtos;
+using IczpNet.Organization.EmployeeTypes;
+using IczpNet.Organization.PositionTypes.Dtos;
+using IczpNet.Organization.PositionTypes;
 
 namespace IczpNet.Organization;
 
@@ -112,5 +116,17 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         CreateMap<EmployeeState, EmployeeStateDetailDto>();
         CreateMap<EmployeeStateCreateInput, EmployeeState>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
         CreateMap<EmployeeStateUpdateInput, EmployeeState>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //EmployeeType
+        CreateMap<EmployeeType, EmployeeTypeDto>();
+        CreateMap<EmployeeType, EmployeeTypeDetailDto>();
+        CreateMap<EmployeeTypeCreateInput, EmployeeType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<EmployeeTypeUpdateInput, EmployeeType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //PositionType
+        CreateMap<PositionType, PositionTypeDto>();
+        CreateMap<PositionType, PositionTypeDetailDto>();
+        CreateMap<PositionTypeCreateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<PositionTypeUpdateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
     }
 }

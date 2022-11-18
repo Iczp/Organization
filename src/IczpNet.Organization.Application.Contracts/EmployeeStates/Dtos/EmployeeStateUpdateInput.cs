@@ -1,9 +1,8 @@
-﻿using IczpNet.AbpCommons.DataFilters;
-using IczpNet.Organization.BaseDtos;
+﻿using IczpNet.Organization.BaseDtos;
 
 namespace IczpNet.Organization.EmployeeStates.Dtos;
 
-public class EmployeeStateUpdateInput : BaseInput, IName
+public class EmployeeStateUpdateInput : BaseInput
 {
 
 }

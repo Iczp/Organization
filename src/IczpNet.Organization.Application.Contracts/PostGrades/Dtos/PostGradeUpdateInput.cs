@@ -1,10 +1,9 @@
-﻿using IczpNet.AbpCommons.DataFilters;
-using IczpNet.Organization.BaseDtos;
+﻿using IczpNet.Organization.BaseDtos;
 using System;
 
 namespace IczpNet.Organization.PostGrades.Dtos;
 
-public class PostGradeUpdateInput : BaseInput, IName
+public class PostGradeUpdateInput : BaseInput
 {
     public virtual Guid PostRankId { get; set; }
 

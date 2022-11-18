@@ -44,6 +44,9 @@ namespace IczpNet.Organization.Migrations
                         .HasMaxLength(64)
                         .HasColumnType("nvarchar(64)");
 
+                    b.Property<Guid?>("CompanyTypeId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasMaxLength(40)
@@ -158,9 +161,92 @@ namespace IczpNet.Organization.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CompanyTypeId");
+
                     b.HasIndex("ParentId");
 
                     b.ToTable("Organization_Company", (string)null);
+                });
+
+            modelBuilder.Entity("IczpNet.Organization.CompanyTypes.CompanyType", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Code")
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("ExtraProperties")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<bool>("IsStatic")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("nvarchar(64)");
+
+                    b.Property<string>("Name_Pinyin")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<string>("Name_Py")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<double>("Sorting")
+                        .HasColumnType("float");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TenantId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Organization_CompanyType", (string)null);
                 });
 
             modelBuilder.Entity("IczpNet.Organization.DepartmentFunctionals.DepartmentFunctional", b =>
@@ -1545,9 +1631,15 @@ namespace IczpNet.Organization.Migrations
 
             modelBuilder.Entity("IczpNet.Organization.Companys.Company", b =>
                 {
+                    b.HasOne("IczpNet.Organization.CompanyTypes.CompanyType", "CompanyType")
+                        .WithMany("CompanyList")
+                        .HasForeignKey("CompanyTypeId");
+
                     b.HasOne("IczpNet.Organization.Companys.Company", "Parent")
                         .WithMany("Childs")
                         .HasForeignKey("ParentId");
+
+                    b.Navigation("CompanyType");
 
                     b.Navigation("Parent");
                 });
@@ -1740,6 +1832,11 @@ namespace IczpNet.Organization.Migrations
                     b.Navigation("Childs");
 
                     b.Navigation("DepartmentList");
+                });
+
+            modelBuilder.Entity("IczpNet.Organization.CompanyTypes.CompanyType", b =>
+                {
+                    b.Navigation("CompanyList");
                 });
 
             modelBuilder.Entity("IczpNet.Organization.Departments.Department", b =>

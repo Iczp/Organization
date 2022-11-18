@@ -18,6 +18,10 @@ using IczpNet.Organization.EmployeeTypes.Dtos;
 using IczpNet.Organization.EmployeeTypes;
 using IczpNet.Organization.PositionTypes.Dtos;
 using IczpNet.Organization.PositionTypes;
+using IczpNet.Organization.CompanyTypes.Dtos;
+using IczpNet.Organization.CompanyTypes;
+using IczpNet.Organization.PostTypes.Dtos;
+using IczpNet.Organization.PostTypes;
 
 namespace IczpNet.Organization;
 
@@ -87,6 +91,12 @@ public class OrganizationApplicationAutoMapperProfile : Profile
             .Ignore(x => x.ChildsCount)
             .Ignore(x => x.Childs);
 
+        //CompanyType
+        CreateMap<CompanyType, CompanyTypeDto>();
+        CreateMap<CompanyType, CompanyTypeDetailDto>();
+        CreateMap<CompanyTypeCreateInput, CompanyType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<CompanyTypeUpdateInput, CompanyType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
         //Position
         CreateMap<Position, PositionDto>();
         CreateMap<Position, PositionDetailDto>();
@@ -104,6 +114,11 @@ public class OrganizationApplicationAutoMapperProfile : Profile
             .Ignore(x => x.ChildsCount)
             .Ignore(x => x.Childs);
 
+        //PositionType
+        CreateMap<PositionType, PositionTypeDto>();
+        CreateMap<PositionType, PositionTypeDetailDto>();
+        CreateMap<PositionTypeCreateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<PositionTypeUpdateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
         //Employee
         CreateMap<Employee, EmployeeDto>();
@@ -123,10 +138,11 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         CreateMap<EmployeeTypeCreateInput, EmployeeType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
         CreateMap<EmployeeTypeUpdateInput, EmployeeType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
-        //PositionType
-        CreateMap<PositionType, PositionTypeDto>();
-        CreateMap<PositionType, PositionTypeDetailDto>();
-        CreateMap<PositionTypeCreateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
-        CreateMap<PositionTypeUpdateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        //PostType
+        CreateMap<PostType, PostTypeDto>();
+        CreateMap<PostType, PostTypeDetailDto>();
+        CreateMap<PostTypeCreateInput, PostType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<PostTypeUpdateInput, PostType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
     }
 }

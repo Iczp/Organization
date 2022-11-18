@@ -1,4 +1,5 @@
 ﻿using IczpNet.Organization.Companys;
+using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
@@ -25,6 +26,8 @@ public interface IOrganizationDbContext : IEfCoreDbContext
      */
 
     DbSet<Company> Company { get; }
+
+    DbSet<CompanyType> CompanyType { get; }
 
     DbSet<Department> Department { get; }
 

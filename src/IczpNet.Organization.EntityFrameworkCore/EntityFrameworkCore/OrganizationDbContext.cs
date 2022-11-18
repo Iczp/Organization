@@ -1,4 +1,5 @@
 ﻿using IczpNet.Organization.Companys;
+using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
@@ -25,6 +26,7 @@ public class OrganizationDbContext : AbpDbContext<OrganizationDbContext>, IOrgan
      */
 
     public virtual DbSet<Company> Company { get; }
+    public virtual DbSet<CompanyType> CompanyType { get; }
     public virtual DbSet<Department> Department { get; }
     public virtual DbSet<DepartmentType> DepartmentType { get; }
     public virtual DbSet<Position> Position { get; }

@@ -3,12 +3,12 @@ using System;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
 
-namespace IczpNet.Organization.EmployeeStates.Dtos;
+namespace IczpNet.Organization.EmployeeTypes.Dtos;
 
 /// <summary>
 /// DepartmentGetListInput
 /// </summary>
-public class EmployeeStateGetListInput : PagedAndSortedResultRequestDto, IKeyword
+public class EmployeeTypeGetListInput : PagedAndSortedResultRequestDto, IKeyword
 {
     [DefaultValue(null)]
     public virtual bool? IsStatic { get; set; }

@@ -9,8 +9,13 @@ namespace IczpNet.Organization.DepartmentTypes.Dtos
     public class DepartmentTypeDto :  IEntityDto<Guid>
     {
         public virtual string Name { get; set; }
+
         public virtual string Code { get; set; }
+
         public virtual bool IsStatic { get; set; }
+
+        public virtual bool IsActive { get; set; }
+
         public Guid Id { get; set; }
     }
 }

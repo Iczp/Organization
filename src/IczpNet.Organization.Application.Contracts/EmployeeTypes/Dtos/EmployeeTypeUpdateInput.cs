@@ -1,9 +1,9 @@
-﻿namespace IczpNet.Organization.DepartmentTypes.Dtos;
+﻿namespace IczpNet.Organization.EmployeeTypes.Dtos;
 
 /// <summary>
 /// DepartmentUpdateInput
 /// </summary>
-public class DepartmentTypeUpdateInput
+public class EmployeeTypeUpdateInput
 {
     public virtual string Name { get; set; }
     public virtual string Code { get; set; }

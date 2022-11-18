@@ -32,6 +32,9 @@ namespace IczpNet.Organization.BaseEntitys
         [MaxLength(64)]
         public virtual string Code { get; set; }
 
+        [MaxLength(500)]
+        public virtual string Description { get; set; }
+
         public virtual double Sorting { get; set; }
 
         public virtual bool IsActive { get; set; }

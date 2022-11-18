@@ -3,8 +3,10 @@ using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.Employees;
 using IczpNet.Organization.EmployeeStates;
+using IczpNet.Organization.EmployeeTypes;
 using IczpNet.Organization.Functionals;
 using IczpNet.Organization.Positions;
+using IczpNet.Organization.PositionTypes;
 using IczpNet.Organization.PostGrades;
 using IczpNet.Organization.PostLevels;
 using IczpNet.Organization.PostRanks;
@@ -30,11 +32,15 @@ public interface IOrganizationDbContext : IEfCoreDbContext
 
     DbSet<Position> Position { get; }
 
+    DbSet<PositionType> PositionType { get; }
+
     DbSet<Functional> Functional { get; }
 
     DbSet<Employee> Employee { get; }
 
     DbSet<EmployeeState> EmployeeState { get; }
+
+    DbSet<EmployeeType> EmployeeType { get; }
 
     DbSet<PostLevel> PostLevel { get; }
 

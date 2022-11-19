@@ -1,4 +1,4 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.Bases;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.Departments.Dtos;
 using System;
@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Repositories;
 namespace IczpNet.Organization.Services
 {
     public class DepartmentAppService
-        : TreeAppService<
+        : CrudTreeOrganizationAppService<
             Department,
             DepartmentDetailDto,
             DepartmentDto,

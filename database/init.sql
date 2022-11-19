@@ -63,6 +63,21 @@ FROM [10.20.5.179].[dwkit330].[dbo].[RC_Organization_PostLevel] b
 where  b.id not in (select id from [dbo].[Organization_PostLevel])
 
 
+--Position
+INSERT INTO [dbo].[Organization_Position]  ([Id],[Name],[Code],[IsActive],[Depth],[Sorting],[IsStatic],[FullPath],[FullPathName],[CreationTime],[IsSecretary]) 
+SELECT [Id],[Name],[Code],[IsEnabled],0,
+--Sort
+case when [Sort] is null  then 0
+else  [Sort] end
+,0,'','',
+(case when [CreateTime] is null  then '2022-02-22 22:22:22'
+else  [CreateTime] end) 
+,0
+FROM [10.20.5.179].[dwkit330].[dbo].[RC_Organization_Position] b
+where  b.id not in (select id from [dbo].[Organization_Position])
+
+-- delete [dbo].[Organization_Position]
+-- select * from [dbo].[Organization_Position]
 ------------------------------------
 
 
@@ -70,7 +85,7 @@ where  b.id not in (select id from [dbo].[Organization_PostLevel])
 
 
 INSERT INTO [dbo].[Organization_Functional]  ([Id],[Name],[Code],[IsActive],[Depth],[Sorting],[IsStatic],[FullPath],[FullPathName],[CreationTime]) 
-SELECT [Id],[Name],[Code],[IsEnabled],[IsEnabled],
+SELECT [Id],[Name],[Code],[IsEnabled],0,
 --Sort
 case when [Sort] is null  then 0
 else  [Sort] end

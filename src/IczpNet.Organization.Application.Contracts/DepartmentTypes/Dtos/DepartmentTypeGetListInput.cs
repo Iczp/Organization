@@ -2,7 +2,7 @@
 
 namespace IczpNet.Organization.DepartmentTypes.Dtos;
 
-public class DepartmentTypeUpdateInput : BaseTreeInputDto
+public class DepartmentTypeGetListInput : BaseTreeGetListInput
 {
 
 }

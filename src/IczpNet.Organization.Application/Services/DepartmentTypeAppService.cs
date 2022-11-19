@@ -1,4 +1,4 @@
-﻿using IczpNet.Organization.BaseEntitys;
+﻿using IczpNet.AbpTrees;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.DepartmentTypes.Dtos;
 using System;
@@ -9,14 +9,16 @@ using Volo.Abp.Domain.Repositories;
 namespace IczpNet.Organization.Services
 {
     public class DepartmentTypeAppService
-        : CrudOrganizationAppService<
+        : TreeAppService<
             DepartmentType,
             DepartmentTypeDetailDto,
             DepartmentTypeDto,
-            Guid,
             DepartmentTypeGetListInput,
             DepartmentTypeCreateInput,
-            DepartmentTypeUpdateInput>,
+            DepartmentTypeUpdateInput,
+            DepartmentTypeInfo,
+            DepartmentTypeWithChildsDto,
+            DepartmentTypeWithParentDto>,
         IDepartmentTypeAppService
     {
         public DepartmentTypeAppService(IRepository<DepartmentType, Guid> repository) : base(repository)
@@ -26,7 +28,8 @@ namespace IczpNet.Organization.Services
         protected override async Task<IQueryable<DepartmentType>> CreateFilteredQueryAsync(DepartmentTypeGetListInput input)
         {
             return (await base.CreateFilteredQueryAsync(input))
-                .WhereIf(!input.Keyword.IsNullOrEmpty(), x => x.Name.Contains(input.Keyword) || x.Code.Contains(input.Keyword));
+                //.WhereIf(input.DepartmentTypeTypeId.HasValue, x => x.DepartmentTypelList == input.DepartmentTypeTypeId)
+                ;
         }
     }
 }

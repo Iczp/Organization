@@ -1,5 +1,6 @@
 ﻿using IczpNet.Organization.BaseEntitys;
 using IczpNet.Organization.PostGradePostLevels;
+using IczpNet.Organization.PostGrades;
 using System;
 using System.Collections.Generic;
 
@@ -10,6 +11,8 @@ namespace IczpNet.Organization.PostLevels
         //[Range(0, 20)]
         public virtual long Value { get; set; }
 
-        public virtual IEnumerable<PostGradePostLevel> LevelList { get; set; }
+        public virtual IEnumerable<PostGrade> PostGradeList { get; set; }
+
+        public virtual IEnumerable<PostGradePostLevel> PostGradePostLevelList { get; set; }
     }
 }

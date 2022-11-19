@@ -1,4 +1,5 @@
-﻿using IczpNet.Organization.DepartmentTypes.Dtos;
+﻿using IczpNet.AbpTrees;
+using IczpNet.Organization.DepartmentTypes.Dtos;
 using System;
 using Volo.Abp.Application.Services;
 
@@ -12,6 +13,10 @@ namespace IczpNet.Organization.DepartmentTypes
             DepartmentTypeGetListInput,
             DepartmentTypeCreateInput,
             DepartmentTypeUpdateInput>
+        , ITreeAppService<
+            DepartmentTypeInfo,
+            DepartmentTypeWithChildsDto,
+            DepartmentTypeWithParentDto>
     {
     }
 }

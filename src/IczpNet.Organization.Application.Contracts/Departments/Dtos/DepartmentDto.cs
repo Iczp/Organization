@@ -5,8 +5,6 @@ namespace IczpNet.Organization.Departments.Dtos
 {
     public class DepartmentDto : DepartmentInfo, IEntityDto<Guid>
     {
-        public virtual double Sorting { get; set; }
-
         public virtual string Description { get; set; }
     }
 }

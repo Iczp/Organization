@@ -1,6 +1,5 @@
 ﻿using IczpNet.Organization.BaseDtos;
 using System;
-using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.PostGrades.Dtos
 {
@@ -8,5 +7,6 @@ namespace IczpNet.Organization.PostGrades.Dtos
     {
         public virtual Guid PostRankId { get; set; }
 
+        public virtual Guid? PostLevelId { get; set; }
     }
 }

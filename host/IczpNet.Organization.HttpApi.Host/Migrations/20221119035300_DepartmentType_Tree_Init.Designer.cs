@@ -4,6 +4,7 @@ using IczpNet.Organization.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace IczpNet.Organization.Migrations
 {
     [DbContext(typeof(OrganizationHttpApiHostMigrationsDbContext))]
-    partial class OrganizationHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221119035300_DepartmentType_Tree_Init")]
+    partial class DepartmentType_Tree_Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1428,9 +1430,6 @@ namespace IczpNet.Organization.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<Guid?>("PostLevelId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("PostRankId")
                         .HasColumnType("uniqueidentifier");
 
@@ -1445,8 +1444,6 @@ namespace IczpNet.Organization.Migrations
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("PostLevelId");
 
                     b.HasIndex("PostRankId");
 
@@ -1892,7 +1889,7 @@ namespace IczpNet.Organization.Migrations
                         .IsRequired();
 
                     b.HasOne("IczpNet.Organization.PostLevels.PostLevel", "PostLevel")
-                        .WithMany("PostGradePostLevelList")
+                        .WithMany("LevelList")
                         .HasForeignKey("PostLevelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -1904,17 +1901,11 @@ namespace IczpNet.Organization.Migrations
 
             modelBuilder.Entity("IczpNet.Organization.PostGrades.PostGrade", b =>
                 {
-                    b.HasOne("IczpNet.Organization.PostLevels.PostLevel", "PostLevel")
-                        .WithMany("PostGradeList")
-                        .HasForeignKey("PostLevelId");
-
                     b.HasOne("IczpNet.Organization.PostRanks.PostRank", "PostRank")
                         .WithMany("PostGradeList")
                         .HasForeignKey("PostRankId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("PostLevel");
 
                     b.Navigation("PostRank");
                 });
@@ -2007,9 +1998,7 @@ namespace IczpNet.Organization.Migrations
 
             modelBuilder.Entity("IczpNet.Organization.PostLevels.PostLevel", b =>
                 {
-                    b.Navigation("PostGradeList");
-
-                    b.Navigation("PostGradePostLevelList");
+                    b.Navigation("LevelList");
                 });
 
             modelBuilder.Entity("IczpNet.Organization.PostRanks.PostRank", b =>

@@ -2,7 +2,6 @@
 
 namespace IczpNet.Organization.DepartmentTypes.Dtos;
 
-public class DepartmentTypeGetListInput : BaseGetListInput
+public class DepartmentTypeWithChildsDto : BaseTreeWithChildsDto<DepartmentTypeWithChildsDto>
 {
-
 }

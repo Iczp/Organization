@@ -1,6 +1,9 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
 using IczpNet.Organization.BaseEntitys;
+using IczpNet.Organization.EmployeePositions;
+using IczpNet.Organization.Positions;
 using IczpNet.Organization.PostGradePostLevels;
+using IczpNet.Organization.PostLevels;
 using IczpNet.Organization.PostRanks;
 using System;
 using System.Collections.Generic;
@@ -20,10 +23,17 @@ namespace IczpNet.Organization.PostGrades
 
         public virtual Guid PostRankId { get; set; }
 
+        public virtual Guid? PostLevelId { get; set; }
+
         [ForeignKey(nameof(PostRankId))]
         public virtual PostRank PostRank { get; set; }
 
+        [ForeignKey(nameof(PostLevelId))]
+        public virtual PostLevel PostLevel { get; set; }
+
         public virtual IEnumerable<PostGradePostLevel> LevelList { get; set; }
+
+        //public virtual IEnumerable<Position> PositionList { get; set; } = new List<Position>();
 
     }
 }

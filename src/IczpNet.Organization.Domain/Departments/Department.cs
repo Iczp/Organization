@@ -7,11 +7,10 @@ using IczpNet.Organization.Employees;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using Volo.Abp.MultiTenancy;
 
 namespace IczpNet.Organization.Departments
 {
-    public class Department : BaseTreeEntity<Department>, IMultiTenant
+    public class Department : BaseTreeEntity<Department>
     {
         public virtual Guid? CompanyId { get; set; }
 

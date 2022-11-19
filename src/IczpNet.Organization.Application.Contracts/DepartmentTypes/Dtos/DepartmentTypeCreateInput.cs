@@ -1,6 +1,7 @@
-﻿namespace IczpNet.Organization.DepartmentTypes.Dtos;
+﻿using IczpNet.AbpTrees.Dtos;
+namespace IczpNet.Organization.DepartmentTypes.Dtos;
 
-public class DepartmentTypeCreateInput : DepartmentTypeUpdateInput
+public class DepartmentTypeCreateInput : DepartmentTypeUpdateInput, ITreeInput
 {
-
+   
 }

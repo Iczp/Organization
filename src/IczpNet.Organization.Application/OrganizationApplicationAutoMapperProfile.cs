@@ -59,8 +59,19 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         //DepartmentType
         CreateMap<DepartmentType, DepartmentTypeDto>();
         CreateMap<DepartmentType, DepartmentTypeDetailDto>();
+        CreateMap<DepartmentType, DepartmentTypeWithParentDto>(MemberList.Destination);
+        CreateMap<DepartmentType, DepartmentTypeWithChildsDto>(MemberList.Destination)
+            // MaxDepth
+            //.MaxDepth(depth: 3)
+            .ForMember(s => s.ChildsCount, map => map.MapFrom(d => d.GetChildsCount()))
+             //.ForMember(s => s.UserCount, map => map.MapFrom(d => d.GetUserCount()))
+             ;
         CreateMap<DepartmentTypeCreateInput, DepartmentType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
         CreateMap<DepartmentTypeUpdateInput, DepartmentType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<DepartmentType, DepartmentTypeInfo>();
+        CreateMap<DepartmentTypeInfo, DepartmentTypeWithChildsDto>()
+            .Ignore(x => x.ChildsCount)
+            .Ignore(x => x.Childs);
 
 
         //Functional

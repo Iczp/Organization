@@ -1,7 +1,6 @@
 ﻿using IczpNet.AbpTrees;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.DepartmentTypes.Dtos;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -31,17 +30,6 @@ namespace IczpNet.Organization.Services
             return (await base.CreateFilteredQueryAsync(input))
                 //.WhereIf(input.DepartmentTypeTypeId.HasValue, x => x.DepartmentTypelList == input.DepartmentTypeTypeId)
                 ;
-        }
-
-        [HttpPost]
-        public virtual async Task RepairDataAsync()
-        {
-            var list = await Repository.GetListAsync(x => x.ParentId == null);
-
-            foreach (var entity in list)
-            {
-                await TreeManager.UpdateAsync(entity.Id, entity.Name, null);
-            }
         }
     }
 }

@@ -1,8 +1,6 @@
 ﻿using IczpNet.AbpTrees;
 using IczpNet.AbpTrees.Dtos;
-using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
@@ -46,17 +44,6 @@ namespace IczpNet.Organization.Bases
     {
         protected CrudTreeOrganizationAppService(IRepository<TEntity, Guid> repository) : base(repository)
         {
-        }
-
-        [HttpPost]
-        public virtual async Task RepairDataAsync()
-        {
-            var list = await Repository.GetListAsync(x => x.ParentId == null);
-
-            foreach (var entity in list)
-            {
-                await TreeManager.UpdateAsync(entity.Id, entity.Name, null);
-            }
         }
     }
 }

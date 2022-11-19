@@ -3,7 +3,6 @@ using IczpNet.Organization.DepartmentPositions;
 using IczpNet.Organization.EmployeePositions;
 using IczpNet.Organization.PositionFunctionals;
 using IczpNet.Organization.PositionTypes;
-using IczpNet.Organization.PostGrades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;

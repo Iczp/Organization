@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <PackageReference Include="IczpNet.AbpCommons.Domain" Version="0.1.2" />
-    <PackageReference Include="IczpNet.AbpTrees.Domain" Version="0.1.4" />
+    <PackageReference Include="IczpNet.AbpTrees.Domain" Version="0.1.5" />
     <PackageReference Include="Volo.Abp.Ddd.Domain" Version="6.0.1" />
     <ProjectReference Include="..\IczpNet.Organization.Domain.Shared\IczpNet.Organization.Domain.Shared.csproj" />
   </ItemGroup>

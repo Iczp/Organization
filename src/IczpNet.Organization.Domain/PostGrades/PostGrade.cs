@@ -34,5 +34,7 @@ namespace IczpNet.Organization.PostGrades
 
         public virtual IEnumerable<Employee> EmployeeList { get; private set; } = new List<Employee>();
 
+        
+
     }
 }

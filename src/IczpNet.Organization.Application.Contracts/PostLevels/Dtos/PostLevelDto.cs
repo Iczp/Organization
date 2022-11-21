@@ -6,5 +6,7 @@ namespace IczpNet.Organization.PostLevels.Dtos
     {
         //[Range(0, 20)]
         public virtual long Value { get; set; }
+
+        public virtual int PostGradeCount { get; set; }
     }
 }

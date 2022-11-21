@@ -57,6 +57,7 @@ public abstract class CrudOrganizationAppService<
     protected override Task SetCreateEntityAsync(TEntity entity, TCreateInput input)
     {
         entity.SetName(input.Name);
+
         return Task.CompletedTask;
     }
 
@@ -64,6 +65,7 @@ public abstract class CrudOrganizationAppService<
     protected override Task SetUpdateEntityAsync(TEntity entity, TUpdateInput input)
     {
         entity.SetName(input.Name);
+
         return Task.CompletedTask;
     }
 

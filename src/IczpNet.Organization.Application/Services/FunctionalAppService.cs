@@ -1,4 +1,5 @@
-﻿using IczpNet.Organization.Bases;
+﻿using IczpNet.AbpCommons;
+using IczpNet.Organization.Bases;
 using IczpNet.Organization.Functionals;
 using IczpNet.Organization.Functionals.Dtos;
 using System;
@@ -27,9 +28,15 @@ namespace IczpNet.Organization.Services
 
         protected override async Task<IQueryable<Functional>> CreateFilteredQueryAsync(FunctionalGetListInput input)
         {
-            return (await base.CreateFilteredQueryAsync(input))
-                //.WhereIf(input.FunctionalTypeId.HasValue, x => x.FunctionallList == input.FunctionalTypeId)
-                ;
+
+            Assert.If(!input.IsEnabledParentId && input.ParentId.HasValue, "When [IsEnabledParentId]=false,then [ParentId] != null");
+
+            return (await Repository.GetQueryableAsync())
+                .WhereIf(input.Depth.HasValue, (x) => x.Depth == input.Depth)
+                .WhereIf(input.IsEnabledParentId, (x) => x.ParentId == input.ParentId)
+                .WhereIf(!string.IsNullOrWhiteSpace(input.Keyword), x => x.Name.Contains(input.Keyword) || x.Code.Contains(input.Keyword) || x.Name_Pinyin.Contains(input.Keyword) || x.Name_Py.Contains(input.Keyword));
+
+
         }
     }
 }

@@ -143,3 +143,44 @@ where  b.id not in (select id from [dbo].[Organization_Department])
 -- delete [dbo].[Organization_Department]
 
 -- delete [dbo].[Organization_DepartmentType]
+
+
+
+--Employee
+
+INSERT INTO [dbo].[Organization_Employee]  ([Id],[Name],[Code],[DepartmentId],[IsActive],[Sorting],[IsStatic],[CreationTime]) 
+
+SELECT [Id],[Name],[EmployeeNo],[DepartmentId],
+--[IsEnabled]
+case when [IsEnabled] is null  then 0 else  [IsEnabled] end
+,
+--Sort
+case when [Sort] is null  then 0 else  [Sort] end
+,0,
+--[CreateTime]
+case when [CreateTime] is null  then '2022-02-22 22:22:22' else  [CreateTime] end
+FROM [10.20.5.179].[dwkit330].[dbo].[T_HR_Employee] b
+where  b.id not in (select id from [dbo].[Organization_Employee])
+--delete [dbo].[[Organization_Employee]] 
+-- select * from [dbo].[Organization_Employee]
+
+
+
+----------------[PositionId]
+INSERT INTO [dbo].[Organization_EmployeePosition] ([EmployeeId],[PositionId],[CreationTime],[Sorting],[IsMaster])
+
+SELECT [Id],[PositionId],
+--[CreateTime]
+case when [CreateTime] is null  then '2022-02-22 22:22:22' else  [CreateTime] end
+,
+--Sort
+case when [Sort] is null  then 0 else  [Sort] end
+,
+0
+
+FROM [10.20.5.179].[dwkit330].[dbo].[T_HR_Employee] b
+where  b.id not in (select [EmployeeId] from [dbo].[Organization_EmployeePosition])
+and b.[PositionId]  is not null
+and b.[PositionId] in (select Id from [dbo].[Organization_Position])
+
+-- select * from [dbo].[Organization_EmployeePosition]

@@ -4,6 +4,7 @@ using IczpNet.Organization.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -12,9 +13,10 @@ using Volo.Abp.EntityFrameworkCore;
 namespace IczpNet.Organization.Migrations
 {
     [DbContext(typeof(OrganizationHttpApiHostMigrationsDbContext))]
-    partial class OrganizationHttpApiHostMigrationsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221121032820_EmployeeFilter_Init")]
+    partial class EmployeeFilter_Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -838,9 +840,6 @@ namespace IczpNet.Organization.Migrations
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<Guid?>("PostGradeId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<double>("Sorting")
                         .HasColumnType("float");
 
@@ -855,8 +854,6 @@ namespace IczpNet.Organization.Migrations
                     b.HasIndex("EmployeeStateId");
 
                     b.HasIndex("EmployeeTypeId");
-
-                    b.HasIndex("PostGradeId");
 
                     b.ToTable("Organization_Employee", (string)null);
                 });
@@ -1933,17 +1930,11 @@ namespace IczpNet.Organization.Migrations
                         .WithMany("EmployeeList")
                         .HasForeignKey("EmployeeTypeId");
 
-                    b.HasOne("IczpNet.Organization.PostGrades.PostGrade", "PostGrade")
-                        .WithMany()
-                        .HasForeignKey("PostGradeId");
-
                     b.Navigation("Department");
 
                     b.Navigation("EmployeeState");
 
                     b.Navigation("EmployeeType");
-
-                    b.Navigation("PostGrade");
                 });
 
             modelBuilder.Entity("IczpNet.Organization.Functionals.Functional", b =>

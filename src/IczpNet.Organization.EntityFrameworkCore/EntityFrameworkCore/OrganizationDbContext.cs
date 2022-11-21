@@ -2,6 +2,7 @@
 using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
+using IczpNet.Organization.EmployeeFilters;
 using IczpNet.Organization.Employees;
 using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.EmployeeTypes;
@@ -33,6 +34,7 @@ public class OrganizationDbContext : AbpDbContext<OrganizationDbContext>, IOrgan
     public virtual DbSet<PositionType> PositionType { get; }
     public virtual DbSet<Functional> Functional { get; }
     public virtual DbSet<Employee> Employee { get; }
+    public virtual DbSet<EmployeeFilter> EmployeeFilter { get; }
     public virtual DbSet<EmployeeState> EmployeeState { get; }
     public virtual DbSet<EmployeeType> EmployeeType { get; }
     public virtual DbSet<PostLevel> PostLevel { get; }

@@ -2,6 +2,7 @@
 using IczpNet.Organization.CompanyTypes;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.DepartmentTypes;
+using IczpNet.Organization.EmployeeFilters;
 using IczpNet.Organization.Employees;
 using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.EmployeeTypes;
@@ -40,6 +41,8 @@ public interface IOrganizationDbContext : IEfCoreDbContext
     DbSet<Functional> Functional { get; }
 
     DbSet<Employee> Employee { get; }
+
+    DbSet<EmployeeFilter> EmployeeFilter { get; }
 
     DbSet<EmployeeState> EmployeeState { get; }
 

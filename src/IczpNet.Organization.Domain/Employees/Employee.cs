@@ -3,6 +3,7 @@ using IczpNet.Organization.Departments;
 using IczpNet.Organization.EmployeePositions;
 using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.EmployeeTypes;
+using IczpNet.Organization.PostGrades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,9 +18,11 @@ namespace IczpNet.Organization.Employees
 
         public virtual Guid? EmployeeTypeId { get; private set; }
 
-        public virtual DateTime? JoinDate { get; set; }
+        public virtual Guid? PostGradeId { get; private set; }
 
-        public virtual DateTime? FirstJoinDate { get; set; }
+        //public virtual DateTime? JoinDate { get; set; }
+
+        //public virtual DateTime? FirstJoinDate { get; set; }
 
         [ForeignKey(nameof(DepartmentId))]
         public virtual Department Department { get; private set; }
@@ -29,6 +32,9 @@ namespace IczpNet.Organization.Employees
 
         [ForeignKey(nameof(EmployeeTypeId))]
         public virtual EmployeeType EmployeeType { get; private set; }
+
+        [ForeignKey(nameof(PostGradeId))]
+        public virtual PostGrade PostGrade { get; private set; }
 
         public virtual IEnumerable<EmployeePosition> PositionList { get; private set; } = new List<EmployeePosition>();
     }

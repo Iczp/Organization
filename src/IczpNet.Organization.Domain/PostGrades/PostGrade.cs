@@ -1,7 +1,6 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
 using IczpNet.Organization.BaseEntitys;
-using IczpNet.Organization.EmployeePositions;
-using IczpNet.Organization.Positions;
+using IczpNet.Organization.Employees;
 using IczpNet.Organization.PostGradePostLevels;
 using IczpNet.Organization.PostLevels;
 using IczpNet.Organization.PostRanks;
@@ -33,7 +32,7 @@ namespace IczpNet.Organization.PostGrades
 
         public virtual IEnumerable<PostGradePostLevel> LevelList { get; set; }
 
-        //public virtual IEnumerable<Position> PositionList { get; set; } = new List<Position>();
+        public virtual IEnumerable<Employee> EmployeeList { get; private set; } = new List<Employee>();
 
     }
 }

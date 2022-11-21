@@ -1,4 +1,4 @@
-﻿using IczpNet.AbpTrees;
+﻿using IczpNet.Organization.Bases;
 using IczpNet.Organization.Positions;
 using IczpNet.Organization.Positions.Dtos;
 using System;
@@ -9,7 +9,7 @@ using Volo.Abp.Domain.Repositories;
 namespace IczpNet.Organization.Services
 {
     public class PositionAppService
-        : TreeAppService<
+        : CrudTreeOrganizationAppService<
             Position,
             PositionDetailDto,
             PositionDto,

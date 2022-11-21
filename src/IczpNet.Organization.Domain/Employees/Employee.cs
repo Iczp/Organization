@@ -9,13 +9,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.Employees
 {
-    public class Employee: BaseEntity<Guid>
+    public class Employee : BaseEntity<Guid>
     {
         public virtual Guid? DepartmentId { get; private set; }
 
         public virtual Guid? EmployeeStateId { get; private set; }
 
         public virtual Guid? EmployeeTypeId { get; private set; }
+
+        public virtual DateTime? JoinDate { get; set; }
+
+        public virtual DateTime? FirstJoinDate { get; set; }
 
         [ForeignKey(nameof(DepartmentId))]
         public virtual Department Department { get; private set; }

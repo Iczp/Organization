@@ -16,9 +16,7 @@ namespace IczpNet.Organization.Services
             PositionGetListInput,
             PositionCreateInput,
             PositionUpdateInput,
-            PositionInfo,
-            PositionWithChildsDto,
-            PositionWithParentDto>,
+            PositionInfo>,
         IPositionAppService
     {
         public PositionAppService(IRepository<Position, Guid> repository) : base(repository)

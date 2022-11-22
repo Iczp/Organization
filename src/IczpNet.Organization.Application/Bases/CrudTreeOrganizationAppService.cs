@@ -17,9 +17,7 @@ namespace IczpNet.Organization.Bases
         TGetListInput,
         TCreateInput,
         TUpdateInput,
-        TTreeInfo,
-        TTreeWithChildsDto,
-        TTreeWithParentDto>
+        TTreeInfo>
         :
         TreeAppService<
             TEntity,
@@ -28,14 +26,9 @@ namespace IczpNet.Organization.Bases
             TGetListInput,
             TCreateInput,
             TUpdateInput,
-            TTreeInfo,
-            TTreeWithChildsDto,
-            TTreeWithParentDto>
+            TTreeInfo>
         ,
-        ITreeAppService<
-        TTreeInfo,
-        TTreeWithChildsDto,
-        TTreeWithParentDto>
+        ITreeAppService<TTreeInfo>
         where TEntity : BaseTreeEntity<TEntity>, ITreeEntity
         where TGetOutputDto : IEntityDto<Guid>
         where TGetListOutputDto : IEntityDto<Guid>
@@ -43,8 +36,6 @@ namespace IczpNet.Organization.Bases
         where TCreateInput : ITreeInput
         where TUpdateInput : ITreeInput
         where TTreeInfo : ITreeInfo
-        where TTreeWithChildsDto : ITreeWithChildsInfo<TTreeWithChildsDto>
-        where TTreeWithParentDto : ITreeWithParentInfo<TTreeWithParentDto>
     {
         protected CrudTreeOrganizationAppService(IRepository<TEntity, Guid> repository) : base(repository)
         {

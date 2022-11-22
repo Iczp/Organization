@@ -1,4 +1,5 @@
 ﻿using IczpNet.AbpTrees;
+using IczpNet.Organization.Companys;
 using IczpNet.Organization.Functionals.Dtos;
 using System;
 using Volo.Abp.Application.Services;
@@ -13,10 +14,8 @@ namespace IczpNet.Organization.Functionals
             FunctionalGetListInput,
             FunctionalCreateInput,
             FunctionalUpdateInput>
-        , ITreeAppService<
-            FunctionalInfo,
-            FunctionalWithChildsDto,
-            FunctionalWithParentDto>
+        ,
+        ITreeAppService<FunctionalInfo>
     {
     }
 }

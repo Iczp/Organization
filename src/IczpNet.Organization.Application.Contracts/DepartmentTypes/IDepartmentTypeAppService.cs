@@ -13,10 +13,8 @@ namespace IczpNet.Organization.DepartmentTypes
             DepartmentTypeGetListInput,
             DepartmentTypeCreateInput,
             DepartmentTypeUpdateInput>
-        , ITreeAppService<
-            DepartmentTypeInfo,
-            DepartmentTypeWithChildsDto,
-            DepartmentTypeWithParentDto>
+        ,
+        ITreeAppService<DepartmentTypeInfo>
     {
     }
 }

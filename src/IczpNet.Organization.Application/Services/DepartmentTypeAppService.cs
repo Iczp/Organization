@@ -16,9 +16,7 @@ namespace IczpNet.Organization.Services
             DepartmentTypeGetListInput,
             DepartmentTypeCreateInput,
             DepartmentTypeUpdateInput,
-            DepartmentTypeInfo,
-            DepartmentTypeWithChildsDto,
-            DepartmentTypeWithParentDto>,
+            DepartmentTypeInfo>,
         IDepartmentTypeAppService
     {
         public DepartmentTypeAppService(IRepository<DepartmentType, Guid> repository) : base(repository)

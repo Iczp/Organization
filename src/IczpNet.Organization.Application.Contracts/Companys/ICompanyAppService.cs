@@ -13,10 +13,8 @@ namespace IczpNet.Organization.Companys
             CompanyGetListInput,
             CompanyCreateInput,
             CompanyUpdateInput>
-        , ITreeAppService<
-            CompanyInfo,
-            CompanyWithChildsDto,
-            CompanyWithParentDto>
+        , 
+        ITreeAppService<CompanyInfo>
     {
     }
 }

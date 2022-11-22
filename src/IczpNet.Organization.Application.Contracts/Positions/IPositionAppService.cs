@@ -13,10 +13,8 @@ namespace IczpNet.Organization.Positions
             PositionGetListInput,
             PositionCreateInput,
             PositionUpdateInput>
-        , ITreeAppService<
-            PositionInfo,
-            PositionWithChildsDto,
-            PositionWithParentDto>
+        ,
+        ITreeAppService<PositionInfo>
     {
     }
 }

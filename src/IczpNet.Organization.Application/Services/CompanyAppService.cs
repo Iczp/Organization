@@ -16,9 +16,7 @@ namespace IczpNet.Organization.Services
             CompanyGetListInput,
             CompanyCreateInput,
             CompanyUpdateInput,
-            CompanyInfo,
-            CompanyWithChildsDto,
-            CompanyWithParentDto>,
+            CompanyInfo>,
         ICompanyAppService
     {
         public CompanyAppService(IRepository<Company, Guid> repository) : base(repository)

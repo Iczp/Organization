@@ -17,9 +17,7 @@ namespace IczpNet.Organization.Services
             FunctionalGetListInput,
             FunctionalCreateInput,
             FunctionalUpdateInput,
-            FunctionalInfo,
-            FunctionalWithChildsDto,
-            FunctionalWithParentDto>,
+            FunctionalInfo>,
         IFunctionalAppService
     {
         public FunctionalAppService(IRepository<Functional, Guid> repository) : base(repository)

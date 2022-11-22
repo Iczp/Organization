@@ -3,10 +3,12 @@ using IczpNet.Organization.Departments;
 using IczpNet.Organization.EmployeePositions;
 using IczpNet.Organization.EmployeeStates;
 using IczpNet.Organization.EmployeeTypes;
+using IczpNet.Organization.Positions;
 using IczpNet.Organization.PostGrades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 
 namespace IczpNet.Organization.Employees
 {
@@ -36,6 +38,51 @@ namespace IczpNet.Organization.Employees
         [ForeignKey(nameof(PostGradeId))]
         public virtual PostGrade PostGrade { get; private set; }
 
-        public virtual IEnumerable<EmployeePosition> PositionList { get; private set; } = new List<EmployeePosition>();
+        public virtual IList<EmployeePosition> PositionList { get; private set; } = new List<EmployeePosition>();
+
+        public void SetDepartment(Department department)
+        {
+            Department = department;
+        }
+
+        public void SetEmployeeState(EmployeeState employeeState)
+        {
+            EmployeeState = employeeState;
+        }
+
+        public void SetEmployeeType(EmployeeType employeeType)
+        {
+            EmployeeType = employeeType;
+        }
+
+        public void SetPostGrade(PostGrade postGrade)
+        {
+            PostGrade = postGrade;
+        }
+
+        public void SetPositionList(List<Position> positionList)
+        {
+            PositionList?.Clear();
+
+            foreach (var position in positionList)
+            {
+                AddPosition(position);
+            }
+        }
+
+        public void AddPosition(Position position)
+        {
+            PositionList.Add(new EmployeePosition(this, position));
+        }
+
+        public List<Guid> GetPositionIdList()
+        {
+            return PositionList.Select(x => x.PositionId).ToList();
+        }
+
+        public List<Position> GetPositionList()
+        {
+            return PositionList.Select(x => x.Position).ToList();
+        }
     }
 }

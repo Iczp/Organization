@@ -8,6 +8,13 @@ namespace IczpNet.Organization.EmployeePositions
 {
     public class EmployeePosition : BaseEntity
     {
+        protected EmployeePosition() { }
+        public EmployeePosition(Employee employee, Position position)
+        {
+            Employee = employee;
+            Position = position;
+        }
+
         public virtual bool IsMaster { get; set; }
 
         public virtual Guid EmployeeId { get; set; }

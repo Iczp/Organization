@@ -39,7 +39,7 @@ namespace IczpNet.Organization.BaseEntitys
 
         public virtual bool IsActive { get; set; }
 
-        public virtual bool IsStatic { get; set; }
+        public virtual bool IsStatic { get; protected set; }
 
         public virtual void SetName(string name)
         {
@@ -50,6 +50,16 @@ namespace IczpNet.Organization.BaseEntitys
             Name_Py = name.ConvertToPY().MaxLength(300);
 
             Name_Pinyin = name.ConvertToPinyin().MaxLength(300);
+        }
+
+        public virtual void SetIsActive(bool isActive) 
+        {
+            IsActive = isActive;
+        }
+
+        public virtual void SetIsStatic(bool isStatic)
+        {
+            IsStatic = isStatic;
         }
     }
 }

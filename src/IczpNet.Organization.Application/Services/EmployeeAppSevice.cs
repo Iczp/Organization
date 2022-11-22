@@ -19,14 +19,20 @@ namespace IczpNet.Organization.Services
             EmployeeUpdateInput>,
         IEmployeeAppService
     {
-        public EmployeeAppService(IRepository<Employee, Guid> repository) : base(repository)
+
+
+        protected IEmployeeManager EmployeeManager { get; }
+
+        public EmployeeAppService(
+            IRepository<Employee, Guid> repository,
+            IEmployeeManager employeeManager) : base(repository)
         {
+            EmployeeManager = employeeManager;
         }
 
-        protected override async Task<IQueryable<Employee>> CreateFilteredQueryAsync(EmployeeGetListInput input)
+        protected override Task<IQueryable<Employee>> CreateFilteredQueryAsync(EmployeeGetListInput input)
         {
-            return (await base.CreateFilteredQueryAsync(input))
-                .WhereIf(!input.Keyword.IsNullOrEmpty(), x => x.Name.Contains(input.Keyword) || x.Code.Contains(input.Keyword));
+            return EmployeeManager.CreateFilteredQueryAsync(input);
         }
     }
 }

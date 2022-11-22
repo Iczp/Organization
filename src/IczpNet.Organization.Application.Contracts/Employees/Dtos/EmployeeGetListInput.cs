@@ -1,15 +1,17 @@
 ﻿using IczpNet.AbpCommons.DataFilters;
-using System;
 using System.ComponentModel;
 using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Employees.Dtos;
 
-public class EmployeeGetListInput : PagedAndSortedResultRequestDto, IKeyword
+public class EmployeeGetListInput : EmployeeFilterInput, IPagedAndSortedResultRequest, IKeyword
 {
-    /// <summary>
-    /// 关键字(支持拼音)
-    /// </summary>
-    [DefaultValue(null)]
-    public virtual string Keyword { get; set; }
+    [DefaultValue(0)]
+    public virtual int SkipCount { get; set; }
+
+    [DefaultValue(10)]
+    public virtual int MaxResultCount { get; set; }
+
+    [DefaultValue("")]
+    public virtual string Sorting { get; set; }
 }

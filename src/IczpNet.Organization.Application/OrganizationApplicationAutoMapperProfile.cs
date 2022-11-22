@@ -1,33 +1,35 @@
 ﻿using AutoMapper;
+using IczpNet.Organization.Companys;
+using IczpNet.Organization.Companys.Dtos;
+using IczpNet.Organization.CompanyTypes;
+using IczpNet.Organization.CompanyTypes.Dtos;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.Departments.Dtos;
 using IczpNet.Organization.DepartmentTypes;
 using IczpNet.Organization.DepartmentTypes.Dtos;
-using IczpNet.Organization.Functionals.Dtos;
-using IczpNet.Organization.Functionals;
-using Volo.Abp.AutoMapper;
-using IczpNet.Organization.Companys.Dtos;
-using IczpNet.Organization.Companys;
-using IczpNet.Organization.Positions.Dtos;
-using IczpNet.Organization.Positions;
-using IczpNet.Organization.EmployeeStates.Dtos;
-using IczpNet.Organization.EmployeeStates;
-using IczpNet.Organization.Employees.Dtos;
+using IczpNet.Organization.EmployeeFilters.Dtos;
+using IczpNet.Organization.EmployeeFilters;
 using IczpNet.Organization.Employees;
-using IczpNet.Organization.EmployeeTypes.Dtos;
+using IczpNet.Organization.Employees.Dtos;
+using IczpNet.Organization.EmployeeStates;
+using IczpNet.Organization.EmployeeStates.Dtos;
 using IczpNet.Organization.EmployeeTypes;
-using IczpNet.Organization.PositionTypes.Dtos;
+using IczpNet.Organization.EmployeeTypes.Dtos;
+using IczpNet.Organization.Functionals;
+using IczpNet.Organization.Functionals.Dtos;
+using IczpNet.Organization.Positions;
+using IczpNet.Organization.Positions.Dtos;
 using IczpNet.Organization.PositionTypes;
-using IczpNet.Organization.CompanyTypes.Dtos;
-using IczpNet.Organization.CompanyTypes;
-using IczpNet.Organization.PostTypes.Dtos;
-using IczpNet.Organization.PostTypes;
-using IczpNet.Organization.PostRanks.Dtos;
-using IczpNet.Organization.PostRanks;
-using IczpNet.Organization.PostGrades.Dtos;
+using IczpNet.Organization.PositionTypes.Dtos;
 using IczpNet.Organization.PostGrades;
-using IczpNet.Organization.PostLevels.Dtos;
+using IczpNet.Organization.PostGrades.Dtos;
 using IczpNet.Organization.PostLevels;
+using IczpNet.Organization.PostLevels.Dtos;
+using IczpNet.Organization.PostRanks;
+using IczpNet.Organization.PostRanks.Dtos;
+using IczpNet.Organization.PostTypes;
+using IczpNet.Organization.PostTypes.Dtos;
+using Volo.Abp.AutoMapper;
 
 namespace IczpNet.Organization;
 
@@ -138,8 +140,8 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         CreateMap<PositionTypeUpdateInput, PositionType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
         //Employee
-        CreateMap<Employee, EmployeeDto>();
-        CreateMap<Employee, EmployeeDetailDto>();
+        CreateMap<Employee, EmployeeDto>().ForMember(x => x.PostionIdList, o => o.MapFrom(x => x.GetPositionIdList()));
+        CreateMap<Employee, EmployeeDetailDto>().ForMember(x => x.PostionIdList, o => o.MapFrom(x => x.GetPositionIdList()));
         CreateMap<EmployeeCreateInput, Employee>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
         CreateMap<EmployeeUpdateInput, Employee>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
@@ -154,6 +156,12 @@ public class OrganizationApplicationAutoMapperProfile : Profile
         CreateMap<EmployeeType, EmployeeTypeDetailDto>();
         CreateMap<EmployeeTypeCreateInput, EmployeeType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
         CreateMap<EmployeeTypeUpdateInput, EmployeeType>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+
+        //EmployeeFilter
+        CreateMap<EmployeeFilter, EmployeeFilterDto>();
+        CreateMap<EmployeeFilter, EmployeeFilterDetailDto>();
+        CreateMap<EmployeeFilterCreateInput, EmployeeFilter>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<EmployeeFilterUpdateInput, EmployeeFilter>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
         //PostType
         CreateMap<PostType, PostTypeDto>();

@@ -4,6 +4,7 @@ using IczpNet.Organization.EmployeeTypes.Dtos;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
 namespace IczpNet.Organization.Services
@@ -27,6 +28,11 @@ namespace IczpNet.Organization.Services
         {
             return (await base.CreateFilteredQueryAsync(input))
                 .WhereIf(!input.Keyword.IsNullOrEmpty(), x => x.Name.Contains(input.Keyword) || x.Code.Contains(input.Keyword));
+        }
+
+        public override Task<PagedResultDto<EmployeeTypeDto>> GetListAsync(EmployeeTypeGetListInput input)
+        {
+            return base.GetListAsync(input);
         }
     }
 }

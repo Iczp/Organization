@@ -4,7 +4,8 @@ using System.ComponentModel;
 
 namespace IczpNet.Organization.Employees
 {
-    public class EmployeeFilterInput
+    [Serializable]
+    public class EmployeeFilterParameter
     {
         [DefaultValue(false)]
         public virtual bool IsImportChildDepartment { get; set; }

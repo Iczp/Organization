@@ -1,5 +1,7 @@
 ﻿using IczpNet.Organization.Employees.Dtos;
 using System;
+using System.Threading.Tasks;
+using Volo.Abp.Application.Dtos;
 using Volo.Abp.Application.Services;
 
 namespace IczpNet.Organization.Employees
@@ -13,5 +15,9 @@ namespace IczpNet.Organization.Employees
             EmployeeCreateInput,
             EmployeeUpdateInput>
     {
+
+        Task<PagedResultDto<EmployeeDto>> GetListByFilterIdAsync(Guid filterId, int maxResultCount = 10, int skipCount = 0, string sorting = null);
+
+        Task<PagedResultDto<EmployeeDto>> GetListByFilterCodeAsync(string filterCode, int maxResultCount = 10, int skipCount = 0, string sorting = null);
     }
 }

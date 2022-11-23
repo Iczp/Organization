@@ -9,8 +9,8 @@ namespace IczpNet.Organization;
     typeof(AbpDddDomainModule),
     typeof(OrganizationDomainSharedModule)
 )]
-[DependsOn(typeof(AbpCommonsDomainSharedModule))]
-[DependsOn(typeof(AbpTreesDomainSharedModule))]
+[DependsOn(typeof(AbpCommonsDomainModule))]
+[DependsOn(typeof(AbpTreesDomainModule))]
 public class OrganizationDomainModule : AbpModule
 {
 

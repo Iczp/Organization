@@ -30,6 +30,7 @@ using IczpNet.Organization.PostRanks.Dtos;
 using IczpNet.Organization.PostTypes;
 using IczpNet.Organization.PostTypes.Dtos;
 using Volo.Abp.AutoMapper;
+using IczpNet.Organization.AutoMappers;
 
 namespace IczpNet.Organization;
 
@@ -159,9 +160,13 @@ public class OrganizationApplicationAutoMapperProfile : Profile
 
         //EmployeeFilter
         CreateMap<EmployeeFilter, EmployeeFilterDto>();
-        CreateMap<EmployeeFilter, EmployeeFilterDetailDto>();
-        CreateMap<EmployeeFilterCreateInput, EmployeeFilter>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
-        CreateMap<EmployeeFilterUpdateInput, EmployeeFilter>(MemberList.Source).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<EmployeeFilter, EmployeeFilterDetailDto>()
+            //.ForMember(x => x.Parameter, o => o.MapFrom(new FilterParameterResolver()))
+            .ForMember(x => x.FilterParameter, o => o.MapFrom(x => x.GetFilterParameter()))
+            //.ConvertUsing(typeof(FilterParameterConverter))
+            ;
+        CreateMap<EmployeeFilterCreateInput, EmployeeFilter>(MemberList.None).IgnoreAllPropertiesWithAnInaccessibleSetter();
+        CreateMap<EmployeeFilterUpdateInput, EmployeeFilter>(MemberList.None).IgnoreAllPropertiesWithAnInaccessibleSetter();
 
         //PostType
         CreateMap<PostType, PostTypeDto>();

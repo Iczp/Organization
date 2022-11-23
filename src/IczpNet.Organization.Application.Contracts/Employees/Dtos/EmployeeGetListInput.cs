@@ -4,7 +4,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace IczpNet.Organization.Employees.Dtos;
 
-public class EmployeeGetListInput : EmployeeFilterInput, IPagedAndSortedResultRequest, IKeyword
+public class EmployeeGetListInput : EmployeeFilterParameter, IPagedAndSortedResultRequest, IKeyword
 {
     [DefaultValue(0)]
     public virtual int SkipCount { get; set; }

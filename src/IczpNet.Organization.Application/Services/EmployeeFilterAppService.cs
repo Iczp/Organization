@@ -5,6 +5,7 @@ using IczpNet.Organization.EmployeeFilters.Dtos;
 using IczpNet.Organization.Employees;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories;
@@ -87,6 +88,34 @@ namespace IczpNet.Organization.Services
             var totalCount = await EmployeeManager.GetFilteredCountAsync(updateInput.FilterParameter);
 
             entity.SetFilteredResult(totalCount);
+        }
+
+        [HttpPost]
+        public async Task<DateTime> UpdateFilteredResultAsync(List<Guid> filterIdList)
+        {
+            foreach (var filterId in filterIdList)
+            {
+                var entity = await Repository.GetAsync(filterId);
+
+                var totalCount = await EmployeeManager.GetFilteredCountAsync(entity.GetFilterParameter());
+
+                entity.SetFilteredResult(totalCount);
+            }
+            return Clock.Normalize(DateTime.Now);
+        }
+
+        [HttpPost]
+        public async Task<DateTime> UpdateAllFilteredResultAsync()
+        {
+            var list = await Repository.GetListAsync();
+
+            foreach (var entity in list)
+            {
+                var totalCount = await EmployeeManager.GetFilteredCountAsync(entity.GetFilterParameter());
+
+                entity.SetFilteredResult(totalCount);
+            }
+            return Clock.Normalize(DateTime.Now);
         }
     }
 }

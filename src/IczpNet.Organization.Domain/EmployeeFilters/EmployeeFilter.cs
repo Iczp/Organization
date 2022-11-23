@@ -17,8 +17,6 @@ namespace IczpNet.Organization.EmployeeFilters
 
         public virtual int? TotalCount { get; protected set; }
 
-        public virtual int? ItemCount { get; set; }
-
         public virtual DateTime? LastRunTime { get; protected set; }
 
         public virtual EmployeeFilterParameter GetFilterParameter()

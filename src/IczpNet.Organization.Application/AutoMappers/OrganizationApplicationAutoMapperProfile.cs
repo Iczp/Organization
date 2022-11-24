@@ -30,9 +30,8 @@ using IczpNet.Organization.PostRanks.Dtos;
 using IczpNet.Organization.PostTypes;
 using IczpNet.Organization.PostTypes.Dtos;
 using Volo.Abp.AutoMapper;
-using IczpNet.Organization.AutoMappers;
 
-namespace IczpNet.Organization;
+namespace IczpNet.Organization.AutoMappers;
 
 public class OrganizationApplicationAutoMapperProfile : Profile
 {

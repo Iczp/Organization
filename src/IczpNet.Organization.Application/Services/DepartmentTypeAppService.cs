@@ -11,6 +11,7 @@ namespace IczpNet.Organization.Services
     public class DepartmentTypeAppService
         : CrudTreeOrganizationAppService<
             DepartmentType,
+            Guid,
             DepartmentTypeDetailDto,
             DepartmentTypeDto,
             DepartmentTypeGetListInput,

@@ -21,7 +21,7 @@
 
   <ItemGroup>
 		<PackageReference Include="IczpNet.AbpCommons.Application.Contracts" Version="0.1.2" />
-		<PackageReference Include="IczpNet.AbpTrees.Application.Contracts" Version="0.1.5" />
+		<PackageReference Include="IczpNet.AbpTrees.Application.Contracts" Version="0.1.6" />
     <PackageReference Include="Volo.Abp.Ddd.Application.Contracts" Version="6.0.1" />
     <PackageReference Include="Volo.Abp.Authorization" Version="6.0.1" />
     <ProjectReference Include="..\IczpNet.Organization.Domain.Shared\IczpNet.Organization.Domain.Shared.csproj" />

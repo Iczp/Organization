@@ -14,7 +14,7 @@ namespace IczpNet.Organization.Departments
             DepartmentCreateInput,
             DepartmentUpdateInput>
         ,
-        ITreeAppService<DepartmentInfo>
+        ITreeAppService<Guid, DepartmentInfo>
     {
     }
 }

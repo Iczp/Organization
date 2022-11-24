@@ -1,7 +1,6 @@
 ﻿using IczpNet.Organization.Bases;
 using IczpNet.Organization.Departments;
 using IczpNet.Organization.Departments.Dtos;
-using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,7 +10,8 @@ namespace IczpNet.Organization.Services
 {
     public class DepartmentAppService
         : CrudTreeOrganizationAppService<
-            Department,
+            Department, 
+            Guid,
             DepartmentDetailDto,
             DepartmentDto,
             DepartmentGetListInput,
@@ -30,12 +30,5 @@ namespace IczpNet.Organization.Services
                 //.WhereIf(input.DepartmentTypeId.HasValue, x => x.DepartmentTypeId == input.DepartmentTypeId)
                 ;
         }
-
-        [HttpGet]
-        public override Task RepairDataAsync()
-        {
-            return base.RepairDataAsync();
-        }
-
     }
 }

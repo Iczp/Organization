@@ -3,7 +3,7 @@ using System;
 
 namespace IczpNet.Organization.BaseDtos
 {
-    public class BaseTreeInputDto: ITreeInput
+    public class BaseTreeInputDto: ITreeInput<Guid>
     {
         public virtual Guid? ParentId { get; set; }
 

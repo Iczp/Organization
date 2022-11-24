@@ -5,7 +5,7 @@ using Volo.Abp.Domain.Repositories;
 
 namespace IczpNet.Organization.Departments
 {
-    public class DepartmentTypeManager : TreeManager<DepartmentType>, IDepartmentTypeManager
+    public class DepartmentTypeManager : TreeManager<DepartmentType, Guid>, IDepartmentTypeManager
     {
         public DepartmentTypeManager(IRepository<DepartmentType, Guid> repository) : base(repository)
         {

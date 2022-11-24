@@ -1,10 +1,5 @@
 ﻿using IczpNet.AbpTrees;
 using IczpNet.AbpTrees.Dtos;
-using IczpNet.Organization.BaseEntitys;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 
@@ -12,6 +7,7 @@ namespace IczpNet.Organization.Bases
 {
     public abstract class CrudTreeOrganizationAppService<
         TEntity,
+        TKey,
         TGetOutputDto,
         TGetListOutputDto,
         TGetListInput,
@@ -21,6 +17,7 @@ namespace IczpNet.Organization.Bases
         :
         TreeAppService<
             TEntity,
+            TKey,
             TGetOutputDto,
             TGetListOutputDto,
             TGetListInput,
@@ -28,42 +25,19 @@ namespace IczpNet.Organization.Bases
             TUpdateInput,
             TTreeInfo>
         ,
-        ITreeAppService<TTreeInfo>
-        where TEntity : BaseTreeEntity<TEntity>, ITreeEntity
-        where TGetOutputDto : IEntityDto<Guid>
-        where TGetListOutputDto : IEntityDto<Guid>
-        where TGetListInput : ITreeGetListInput
-        where TCreateInput : ITreeInput
-        where TUpdateInput : ITreeInput
-        where TTreeInfo : ITreeInfo
+        ITreeAppService<TKey, TTreeInfo>
+        where TKey : struct
+        where TEntity : class, ITreeEntity<TEntity, TKey>
+        where TGetOutputDto : IEntityDto<TKey>
+        where TGetListOutputDto : IEntityDto<TKey>
+        where TGetListInput : ITreeGetListInput<TKey>
+        where TCreateInput : ITreeInput<TKey>
+        where TUpdateInput : ITreeInput<TKey>
+        where TTreeInfo : ITreeInfo<TKey>
     {
-        protected CrudTreeOrganizationAppService(IRepository<TEntity, Guid> repository) : base(repository)
+        protected CrudTreeOrganizationAppService(IRepository<TEntity, TKey> repository) : base(repository)
         {
         }
 
-        [HttpPost]
-        public override async Task RepairDataAsync()
-        {
-
-            var list = await Repository.GetListAsync();
-
-            foreach (var entity in list)
-            {
-                SetEntity(entity);
-
-                //await TreeManager.UpdateAsync(entity);
-            }
-
-            //return base.RepairDataAsync();
-        }
-
-        protected virtual void SetEntity(TEntity entity)
-        {
-            Logger.LogInformation("5555:" + entity.Name);
-
-            entity.SetName(entity.Name);
-
-            Logger.LogInformation("pinyin:" + entity.Name_Py);
-        }
     }
 }

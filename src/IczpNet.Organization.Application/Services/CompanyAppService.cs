@@ -11,6 +11,7 @@ namespace IczpNet.Organization.Services
     public class CompanyAppService
         : CrudTreeOrganizationAppService<
             Company,
+            Guid,
             CompanyDetailDto,
             CompanyDto,
             CompanyGetListInput,

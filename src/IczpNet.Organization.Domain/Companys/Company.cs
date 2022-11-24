@@ -9,7 +9,7 @@ using Volo.Abp.MultiTenancy;
 
 namespace IczpNet.Organization.Companys
 {
-    public class Company : BaseTreeEntity<Company>, IMultiTenant
+    public class Company : BaseTreeEntity<Company, Guid>, IMultiTenant
     {
         public virtual Guid? CompanyTypeId { get; set; }
 
@@ -46,6 +46,6 @@ namespace IczpNet.Organization.Companys
         public virtual CompanyType CompanyType { get; set; }
 
 
-        public virtual IEnumerable<Department> DepartmentList{ get; set; }
-}
+        public virtual IEnumerable<Department> DepartmentList { get; set; }
+    }
 }

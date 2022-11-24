@@ -8,8 +8,9 @@ using Volo.Abp.MultiTenancy;
 
 namespace IczpNet.Organization.BaseEntitys
 {
-    public abstract class BaseTreeEntity<T> : TreeEntity<T>, IMultiTenant, IHasPinyin, IName, ICode, IIsStatic, IIsActive//, ISorting
-        where T : ITreeEntity
+    public abstract class BaseTreeEntity<T, TKey> : TreeEntity<T, TKey>, IMultiTenant, IHasPinyin, IName, ICode, IIsStatic, IIsActive//, ISorting
+        where T : ITreeEntity<TKey>
+        where TKey : struct
     {
         public virtual Guid? TenantId { get; set; }
 

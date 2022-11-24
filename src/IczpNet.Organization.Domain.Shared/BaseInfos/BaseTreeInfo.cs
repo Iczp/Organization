@@ -1,8 +1,9 @@
 ﻿using IczpNet.AbpTrees;
+using System;
 
 namespace IczpNet.Organization.BaseInfos
 {
-    public class BaseTreeInfo : TreeInfo
+    public class BaseTreeInfo : TreeInfo<Guid>
     {
         public virtual string Code { get; set; }
 

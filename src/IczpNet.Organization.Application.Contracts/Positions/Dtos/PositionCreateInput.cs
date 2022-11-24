@@ -1,7 +1,6 @@
-﻿using IczpNet.AbpTrees.Dtos;
-namespace IczpNet.Organization.Positions.Dtos;
+﻿namespace IczpNet.Organization.Positions.Dtos;
 
-public class PositionCreateInput : PositionUpdateInput, ITreeInput
+public class PositionCreateInput : PositionUpdateInput
 {
     
 }

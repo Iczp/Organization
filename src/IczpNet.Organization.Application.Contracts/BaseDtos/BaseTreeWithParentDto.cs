@@ -1,8 +1,9 @@
 ﻿using IczpNet.AbpTrees;
+using System;
 
 namespace IczpNet.Organization.BaseDtos
 {
-    public class BaseTreeWithParentDto<T>: TreeWithParentInfo<T>
+    public class BaseTreeWithParentDto<T> : TreeWithParentInfo<T, Guid>
     {
         public virtual string Code { get; set; }
 

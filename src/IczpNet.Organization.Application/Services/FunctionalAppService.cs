@@ -12,6 +12,7 @@ namespace IczpNet.Organization.Services
     public class FunctionalAppService
         : CrudTreeOrganizationAppService<
             Functional,
+            Guid,
             FunctionalDetailDto,
             FunctionalDto,
             FunctionalGetListInput,

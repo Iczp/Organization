@@ -10,7 +10,7 @@ using Volo.Abp.MultiTenancy;
 
 namespace IczpNet.Organization.Positions
 {
-    public class Position : BaseTreeEntity<Position>, IMultiTenant
+    public class Position : BaseTreeEntity<Position, Guid>, IMultiTenant
     {
         public virtual bool IsSecretary { get; set; }
 

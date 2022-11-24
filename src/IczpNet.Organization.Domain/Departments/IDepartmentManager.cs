@@ -5,7 +5,7 @@ using System.Text;
 
 namespace IczpNet.Organization.Departments
 {
-    public interface IDepartmentManager : ITreeManager<Department>
+    public interface IDepartmentManager : ITreeManager<Department, Guid>
     {
     }
 }

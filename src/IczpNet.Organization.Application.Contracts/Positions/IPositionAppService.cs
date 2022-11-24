@@ -14,7 +14,7 @@ namespace IczpNet.Organization.Positions
             PositionCreateInput,
             PositionUpdateInput>
         ,
-        ITreeAppService<PositionInfo>
+        ITreeAppService<Guid, PositionInfo>
     {
     }
 }

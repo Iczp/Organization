@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IczpNet.Organization.Departments
 {
-    public class Department : BaseTreeEntity<Department>
+    public class Department : BaseTreeEntity<Department, Guid>
     {
         public virtual Guid? CompanyId { get; set; }
 

@@ -1,7 +1,6 @@
-﻿using IczpNet.AbpTrees.Dtos;
-namespace IczpNet.Organization.Functionals.Dtos;
+﻿namespace IczpNet.Organization.Functionals.Dtos;
 
-public class FunctionalCreateInput : FunctionalUpdateInput, ITreeInput
+public class FunctionalCreateInput : FunctionalUpdateInput
 {
     
 }

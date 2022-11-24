@@ -11,6 +11,7 @@ namespace IczpNet.Organization.Services
     public class PositionAppService
         : CrudTreeOrganizationAppService<
             Position,
+            Guid,
             PositionDetailDto,
             PositionDto,
             PositionGetListInput,

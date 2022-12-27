@@ -4,12 +4,15 @@ using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
 using Microsoft.Extensions.DependencyInjection;
+using IczpNet.AbpCommons;
 
 namespace IczpNet.Organization;
 
 [DependsOn(
     typeof(OrganizationApplicationContractsModule),
     typeof(AbpAspNetCoreMvcModule))]
+
+[DependsOn(typeof(AbpCommonsHttpApiModule))]
 public class OrganizationHttpApiModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)

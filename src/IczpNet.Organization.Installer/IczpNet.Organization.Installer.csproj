@@ -16,7 +16,7 @@
     <ItemGroup>
         <PackageReference Include="IczpNet.AbpCommons.Installer" Version="0.1.2" />
         <PackageReference Include="IczpNet.AbpTrees.Installer" Version="0.1.5" />
-        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="6.0.2" />
+        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="7.0.2" />
     </ItemGroup>
 
     <ItemGroup>
